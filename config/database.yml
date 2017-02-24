@@ -17,7 +17,7 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  username: postgres1
+  username: postgres
   password: postgres1
   host: localhost
   # For details on connection pooling, see rails configuration guide

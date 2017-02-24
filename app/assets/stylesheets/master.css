@@ -1,0 +1,17 @@
+.pageholder {
+	margin-top:50px;
+}
+.bg-light-blue {
+	background-color: #247;
+}
+.left-right-20 {
+	margin-right: 20px !important;
+  margin-left: 20px !important;
+}
+.navbar-nav>li {
+	margin-left: 30px;
+}
+.navbar-right {
+  float: right!important;
+  margin-right: 180px;
+}

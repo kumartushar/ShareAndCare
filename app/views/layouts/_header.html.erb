@@ -1,0 +1,32 @@
+<nav class="navbar navbar-inverse bg-light-blue navbar-fixed-top">
+	<div class="container-fluid">
+			<div class="navbar-header left-right-20">
+      	<a class="navbar-brand active" href="/home">ShareAndCare</a>
+    </div>
+    <% if user_signed_in? %>
+	    <ul class="nav navbar-nav">
+	      <li class="active"><a href="#">Home</a></li>
+	      <li><a href="#">Blog</a></li>
+	      <li><a href="#">Videos</a></li>
+	      <li><a href="#">Photos</a></li>
+	      <li><a href="#">Feel Free</a></li>
+	    </ul>
+	    <ul class="nav navbar-nav navbar-right">
+	    	<li class="dropdown">
+	    		<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+	    			<span class="glyphicon glyphicon-th-list"></span>
+	    		</a>
+	    		<ul class="dropdown-menu">
+	          <li><a href="#">Profile</a></li>
+	          <li><a href="#">Log Out</a></li>
+        	</ul>
+	    	</li>
+	    </ul>
+	  <% else %>
+	    <ul class="nav navbar-nav navbar-right">
+	    	<li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+	      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+	    </ul>
+	  <% end %>
+	</div>
+</nav>
