@@ -1,17 +1,58 @@
 .pageholder {
-	margin-top:50px;
+	margin-top:60px;
 }
 .bg-light-blue {
 	background-color: #247;
 }
 .left-right-20 {
 	margin-right: 20px !important;
-  margin-left: 20px !important;
+  	margin-left: 20px !important;
+}
+.margin-bottom-20 {
+	margin-bottom: 20px;
+}
+.margin-top-40{
+	margin-top: 40px;
 }
 .navbar-nav>li {
 	margin-left: 30px;
 }
 .navbar-right {
   float: right!important;
-  margin-right: 180px;
+  margin-right: 34px;
+}
+.right-half {
+	float: right;
+    position: absolute;
+    right: 0px;
+    width: 50%;
+}
+.bg-grey {
+	background-color: #d8d4d2;
+}
+.white-color {
+	color: #FFFFFF;
+}
+.right-side-margin-90 {
+	float: right;
+	margin-right: 90px;
+}
+.padding-10 {
+	padding-top: 10px;
+}
+.navbar-brand {
+	color: white !important;
+    font-size: 36px;
+    font-family: courier;
+}
+.short-input {
+	width: 178px;
+	height: 39px;
+}
+.long-input {
+	width: 358px;
+	height: 39px;
+}
+.width-300 {
+	width: 300px;
 }

@@ -1,7 +1,7 @@
 <nav class="navbar navbar-inverse bg-light-blue navbar-fixed-top">
-	<div class="container-fluid">
+	<div class="container-fluid padding-10">
 			<div class="navbar-header left-right-20">
-      	<a class="navbar-brand active" href="/home">ShareAndCare</a>
+      	<a class="navbar-brand" href="/home"><b>ShareAndCare</b></a>
     </div>
     <% if user_signed_in? %>
 	    <ul class="nav navbar-nav">
@@ -18,14 +18,13 @@
 	    		</a>
 	    		<ul class="dropdown-menu">
 	          <li><a href="#">Profile</a></li>
-	          <li><a href="#">Log Out</a></li>
+	          <li><a data-method="delete" href="/users/sign_out" rel="nofollow">Log Out</a></li>
         	</ul>
 	    	</li>
 	    </ul>
 	  <% else %>
 	    <ul class="nav navbar-nav navbar-right">
-	    	<li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-	      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+	    	<%= render 'layouts/login_form'%>
 	    </ul>
 	  <% end %>
 	</div>

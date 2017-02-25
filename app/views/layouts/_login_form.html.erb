@@ -1,0 +1,13 @@
+<%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "navbar-form"}) do |f| %>
+<div class="form-group">
+    <%= f.label :email, 'Email ', :class => "white-color" %>
+    <%= f.email_field :email, autofocus: true, placeholder: "Email" %>
+
+    <%= f.label :password, 'Password ', :class => "white-color" %>
+    <%= f.password_field :password, autocomplete: "off", placeholder: "Password" %>
+
+    <%= f.submit "Log in", html: {class: "btn btn-default"} %> <br />
+
+  <%= link_to "Forgot your password?", new_password_path(resource_name), :class => "right-side-margin-90" %><br />
+</div>
+<% end %>
