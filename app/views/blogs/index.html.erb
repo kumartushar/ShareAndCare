@@ -1,0 +1,12 @@
+<div class="blog-header-view">
+  <h1>Blogs</h1>
+  <div class="create-new-blog-btn">
+    <%= link_to 'Create New Blog', new_blog_path %>
+  </div>
+</div>
+
+<div id="blog-list-view">
+  <% @blogs.each do |blog| %>
+    <%= render partial: "blog_row", locals: {blog: blog}%>
+  <% end %>
+</div>

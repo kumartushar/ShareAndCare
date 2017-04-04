@@ -1,0 +1,23 @@
+<div class="blog-row">
+	<div class="blog-title">
+		<h4><%= blog.title %></h4>
+	</div>
+	<div class="blog-operation-links">
+		<%= link_to 'Show', blog %>
+        <%= link_to 'Edit', edit_blog_path(blog) %>
+        <%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %>
+	</div>
+	<div class="blog-metadata">
+		<div class="blog-description">
+			<span><%= blog.description %></span>
+		</div>
+		<div class="blog-categories">
+			<span>Category: <%= blog.category %></span>
+			<span>Sub-category: <%= blog.sub_category %></span>
+		</div>
+		<div class="blog-date-details">
+			<span>Created On: <%= blog.created_at %></span>
+			<span>Published On: <%= blog.published_on %></span>
+		</div>
+	</div>
+</div>
