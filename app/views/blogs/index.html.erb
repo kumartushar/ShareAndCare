@@ -15,7 +15,7 @@
 </div>
 
 <div id="blog-list-view">
-  <% @blogs.each do |blog| %>
-    <%= render partial: "blog_row", locals: {blog: blog}%>
+  <% @blogs.each_with_index do |blog, index| %>
+    <%= render partial: "blog_row", locals: {blog: blog, index: index}%>
   <% end %>
 </div>

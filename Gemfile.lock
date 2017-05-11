@@ -33,6 +33,10 @@ GEM
     bootstrap-sass (3.2.0.2)
       sass (~> 3.2)
     builder (3.2.3)
+    carrierwave (1.1.0)
+      activemodel (>= 4.0.0)
+      activesupport (>= 4.0.0)
+      mime-types (>= 1.16)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -88,6 +92,7 @@ GEM
     rdoc (4.3.0)
     responders (1.1.2)
       railties (>= 3.2, < 4.2)
+    rmagick (2.13.3)
     sass (3.2.19)
     sass-rails (4.0.5)
       railties (>= 4.0.0, < 5.0)
@@ -129,12 +134,14 @@ PLATFORMS
 DEPENDENCIES
   angularjs-rails
   bootstrap-sass
+  carrierwave (~> 1.0)
   coffee-rails (~> 4.0.0)
   devise
   jbuilder (~> 2.0)
   jquery-rails
   pg
   rails (= 4.1.0)
+  rmagick (~> 2.13.2)
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
   spring
