@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: share-and-care
+  api_key: '578912338145794'
+  api_secret: kUR3G4WvSxNgAcRnySHyq9udzNY
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: share-and-care
+  api_key: '578912338145794'
+  api_secret: kUR3G4WvSxNgAcRnySHyq9udzNY
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: share-and-care
+  api_key: '578912338145794'
+  api_secret: kUR3G4WvSxNgAcRnySHyq9udzNY
+  enhance_image_tag: true
+  static_image_support: false

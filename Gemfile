@@ -32,9 +32,9 @@ gem 'bootstrap-sass'
 
 gem 'devise'
 
-gem "rmagick", "~>2.13.2", :require => 'RMagick'
+gem 'carrierwave'
 
-gem 'carrierwave', '~> 1.0'
+gem 'cloudinary'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

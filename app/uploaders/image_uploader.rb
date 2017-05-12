@@ -1,18 +1,23 @@
 class ImageUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
-  include CarrierWave::RMagick
+  # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
+  include Cloudinary::CarrierWave
+
+
+  process :convert => 'png'
+  process :tags => ['blog_avatar']
 
   # Choose what kind of storage to use for this uploader:
-  storage :file
+  # storage :file
   # storage :fog
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
-  def store_dir
-    "tmp/uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
-  end
+  # def store_dir
+  #   "/tmp/uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+  # end
 
   def extension_whitelist
     %w(jpg jpeg gif png)
@@ -22,14 +27,18 @@ class ImageUploader < CarrierWave::Uploader::Base
     /image\//
   end
 
-  process resize_to_fit: [400, 400]
-
-  version :thumb do 
-    process resize_to_fill: [200,200]
+  version :standard do
+    process :eager => true
+    process resize_to_fill: [400, 200]
   end
 
-  version :small_thumb, from_version: :thumb do
-    process resize_to_fill: [20, 20]
+  version :profile do
+    cloudinary_transformation :width => 90, :height => 98, :crop => :fill, :gravity => :face, :radius => 20, :effect => :sepia
+  end
+
+  version :thumbnail do
+    eager
+    resize_to_fit(50, 50)
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
@@ -63,5 +72,8 @@ class ImageUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
+  def public_id
+    return SecureRandom.urlsafe_base64
+  end
 
 end
