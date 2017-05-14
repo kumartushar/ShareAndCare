@@ -1,34 +1,36 @@
 <p id="notice"><%= notice %></p>
+<div id="blog-show-page">
+  <div class="page-header-block color_light_pink">
+    <% right_half_class = "div_center" %>
+    <% if @blog.avatar? %>
+      <div class="left-half width_35_p">
+        <%= cl_image_tag(@blog.avatar_url(:standard)) %>
+      </div>
+      <% right_half_class = "right-half blog-sm-header" %>
+    <% end %>
+    <div class="<%= right_half_class %>">
+      <div class="blog-title blog_meta_color">
+        <h4 class="large-font"><%= @blog.title %></h4>
+      </div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @blog.title %>
-</p>
+      <div class="blog-categories blog_meta_color">
+        <span class="left-span">Category: <%= @blog.category %></span>
+        <span class="right-span">Sub-category: <%= @blog.sub_category %></span>
+      </div>
 
-<p>
-  <strong>Category:</strong>
-  <%= @blog.category %>
-</p>
+      <div class="blog-date-details blog_meta_color">
+        <span class="left-span">Created On: <%= @blog.created_at.strftime("%d %B %Y") %></span>
+        <span class="right-span">Published On: <%= @blog.published_on %></span>
+      </div>
 
-<p>
-  <strong>Sub category:</strong>
-  <%= @blog.sub_category %>
-</p>
+      <div class="actions">
+        <%= link_to 'Edit', edit_blog_path(@blog) %> |
+        <%= link_to 'Back', blogs_path %>
+      </div>
+    </div>
+  </div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @blog.description %>
-</p>
-
-<p>
-  <strong>Published status:</strong>
-  <%= @blog.published_status %>
-</p>
-
-<p>
-  <strong>Published on:</strong>
-  <%= @blog.published_on %>
-</p>
-
-<%= link_to 'Edit', edit_blog_path(@blog) %> |
-<%= link_to 'Back', blogs_path %>
+  <div class="page-detail-block">
+    <%= @blog.description %>
+  </div>
+</div>

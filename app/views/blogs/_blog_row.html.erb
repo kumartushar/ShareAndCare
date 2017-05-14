@@ -1,7 +1,7 @@
 <% direction = index.odd? ? "float_right" : "" %>
+<% min_hgt_class = blog.avatar? ? "min-height400" : "min-height200" %>
 
-
-<div id="blog-<%= index %>" class="blog-row <%= direction %>" ele-id="<%= blog.id %>">
+<div id="blog-<%= index %>" class="blog-row <%= direction %> <%= min_hgt_class %>" ele-id="<%= blog.id %>">
 	<% if blog.avatar? %>
 		<div class="blog-icon">
 			<%= cl_image_tag(blog.avatar_url(:standard)) %>
@@ -13,12 +13,12 @@
 			<h4><%= blog.title %></h4>
 		</div>
 
-		<div class="blog-categories">
+		<div class="blog-categories overflow_auto">
 			<span class="left-span">Category: <%= blog.category %></span>
 			<span class="right-span">Sub-category: <%= blog.sub_category %></span>
 		</div>
 
-		<div class="blog-date-details">
+		<div class="blog-date-details overflow_auto">
 			<span class="left-span">Created On: <%= blog.created_at.strftime("%d %B %Y") %></span>
 			<span class="right-span">Published On: <%= blog.published_on %></span>
 		</div>
@@ -33,6 +33,25 @@
 		$(document).on("click", ".blog-row", function(e) {
 			var blogID = $(e.target).closest(".blog-row").attr("ele-id");
 			window.location.href = '/blogs/' + blogID;
+		});
+
+		var showChar = 500;
+		var ellipsestext = "....read more >>";
+		var moretext = "more";
+		var lesstext = "less";
+		$('.blog-description').each(function() {
+			var content = $(this).html();
+
+			if(content.length > showChar) {
+
+				var c = content.substr(0, showChar);
+				var h = content.substr(showChar-1, content.length - showChar);
+
+				var html = c + '<span class="moreellipses">' + ellipsestext + '&nbsp;</span>';
+
+				$(this).html(html);
+			}
+
 		});
 	});
 </script> 
