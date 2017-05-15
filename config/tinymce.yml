@@ -1,0 +1,15 @@
+default:
+  plugins:
+    - image
+    - link
+
+alternate:
+  selector: textarea
+  menubar: false
+  toolbar: styleselect | bold italic | table | image link
+  branding: false
+  width : 300
+  plugins:
+    - table
+    - image
+    - link
