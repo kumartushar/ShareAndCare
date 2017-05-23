@@ -27,16 +27,13 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 gem 'angularjs-rails'
-
 gem 'bootstrap-sass'
-
 gem 'devise'
-
 gem 'carrierwave'
-
 gem 'cloudinary'
-
 gem 'tinymce-rails'
+gem 'mysql2',          '~> 0.3.18', :platform => :ruby
+gem 'thinking-sphinx', '~> 3.3.0'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
