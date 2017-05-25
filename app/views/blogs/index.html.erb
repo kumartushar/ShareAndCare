@@ -5,7 +5,7 @@
 	
 	<div class="blog-options">
 		<div class="blog-search-box">
-           	<input id="s" class="search-field" type="text" placeholder="What are you looking for">
+           	<input id="blog-search-input" class="search-field" type="text" placeholder="What are you looking for">
            	<button type="button" class="btn btn-primary">Search</button>
         </div>
         <a href="/blogs/new">
@@ -15,7 +15,7 @@
 </div>
 
 <div id="blog-list-view">
-  <% @blogs.each_with_index do |blog, index| %>
-    <%= render partial: "blog_row", locals: {blog: blog, index: index}%>
-  <% end %>
+  <%= render(:partial=>'blog_list', :locals=>{ :blog_list=> @blogs }) %>
 </div>
+<%= javascript_include_tag "custom_autocomplete" %>
+<%= javascript_include_tag "blog_index" %>

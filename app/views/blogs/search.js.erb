@@ -1,0 +1,1 @@
+$("#blog-list-view").empty().append("<%= escape_javascript(render(:partial=>'blog_list', :locals=>{ :blog_list=> @search_result }))%>");

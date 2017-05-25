@@ -37,6 +37,11 @@ class BlogsController < ApplicationController
     respond_with(@blog)
   end
 
+  def search
+    @search_text = get_unescaped_search_text
+    @search_result = Blog.search "#{@search_text}"
+  end
+
   private
     def set_blog
       @blog = Blog.find(params[:id])
@@ -44,5 +49,9 @@ class BlogsController < ApplicationController
 
     def blog_params
       params.require(:blog).permit(:title, :category, :sub_category, :description, :avatar, :published_status, :published_on)
+    end
+
+    def get_unescaped_search_text
+      URI.unescape(params[:search_text].strip)
     end
 end
