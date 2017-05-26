@@ -4,9 +4,14 @@ class BlogsController < ApplicationController
   respond_to :html
 
   def index
-    @active_page = "blogs"
-    @blogs = Blog.all
-    respond_with(@blogs)
+    begin
+      @active_page = "blogs"
+      @blogs = Blog.all
+      respond_with(@blogs)
+    rescue Exception => e
+      log_error(e, "Error occured in index action of BlogsController")
+      flash_message("Error occured")
+    end
   end
 
   def show
@@ -38,8 +43,13 @@ class BlogsController < ApplicationController
   end
 
   def search
-    @search_text = get_unescaped_search_text
-    @search_result = Blog.search "#{@search_text}"
+    begin
+      @search_text = get_unescaped_search_text
+      @search_result = Blog.search ThinkingSphinx::Query.escape("*#{@search_text}*")
+    rescue Exception => e
+      log_error(e, "Error occured in search action of BlogsController")
+      flash_message("Error occured")
+    end
   end
 
   private

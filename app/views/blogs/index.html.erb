@@ -1,4 +1,4 @@
-<div class="blog-header-view">
+<div class="blog-header-view bg-grey">
 	<div class="blog-header">
 		<h1>BLOGS</h1>
 	</div>
@@ -7,6 +7,9 @@
 		<div class="blog-search-box">
            	<input id="blog-search-input" class="search-field" type="text" placeholder="What are you looking for">
            	<button type="button" class="btn btn-primary">Search</button>
+           	<div class="search-result-list-sm">
+           		abcd
+           	</div>
         </div>
         <a href="/blogs/new">
 			<button type="button" class="btn btn-primary">Create New Blog</button>
@@ -14,7 +17,7 @@
 	</div>
 </div>
 
-<div id="blog-list-view">
+<div id="blog-list-view" class="blog-list-view">
   <%= render(:partial=>'blog_list', :locals=>{ :blog_list=> @blogs }) %>
 </div>
 <%= javascript_include_tag "custom_autocomplete" %>

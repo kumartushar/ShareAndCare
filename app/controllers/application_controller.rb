@@ -11,4 +11,13 @@ class ApplicationController < ActionController::Base
   	devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :email, :password, :gender])
   	devise_parameter_sanitizer.permit(:sign_in, keys: [:email, :password])
   end
+
+  def log_error(e, message="")
+    Rails.logger.error "#{message}: #{e.message}"
+    e.backtrace[0..13].each { |line| Rails.logger.error line }
+  end
+
+  def flash_message(flash_message)
+    flash[:error] =  t(flash_message)
+  end
 end

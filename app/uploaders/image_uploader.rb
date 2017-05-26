@@ -29,7 +29,7 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   version :standard do
     process :eager => true
-    process resize_to_fill: [400, 200]
+    process resize_to_fill: [365, 170]
   end
 
   version :profile do

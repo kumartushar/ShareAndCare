@@ -1,7 +1,7 @@
 body {
-    color: #666;
-    font: 400 13px/1.6 Arial,"HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif;
-    word-wrap: break-word;
+  color: #666;
+  font: 400 13px/1.6 Arial,"HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif;
+  word-wrap: break-word;
 }
 .pageholder {
 	margin-top:60px;
@@ -11,7 +11,7 @@ body {
 }
 .left-right-20 {
 	margin-right: 20px !important;
-  	margin-left: 20px !important;
+	margin-left: 20px !important;
 }
 .margin-bottom-20 {
 	margin-bottom: 20px;
@@ -32,9 +32,9 @@ body {
 }
 .right-half {
 	float: right;
-    position: absolute;
-    right: 0px;
-    width: 50%;
+  position: absolute;
+  right: 0px;
+  width: 50%;
 }
 .bg-grey {
 	background-color: #F0F8FF;
@@ -51,8 +51,8 @@ body {
 }
 .navbar-brand {
 	color: white !important;
-    font-size: 36px;
-    font-family: courier;
+  font-size: 36px;
+  font-family: courier;
 }
 .short-input {
 	width: 178px;
@@ -73,18 +73,21 @@ body {
 	margin-left: 0px;
 }
 .blog-options{
-	padding: 12px;
-	margin-top: 3px;
+  padding-bottom: 12px;
 }
 .blog-header-view{
 	box-shadow: 10px 10px 5px grey;
-      margin-bottom: 35px;
+  position: fixed;
+  width: 100%;
+}
+.blog-list-view {
+  margin-top: 186px;
 }
 .blog-header h1 {
-	  text-align: center;
-    font-weight: bold;
-    padding-bottom: 10px;
-    font-size: 48px;
+  text-align: center;
+  font-weight: bold;
+  padding-bottom: 10px;
+  font-size: 48px;
 }
 .search-field{
 	height: 40px;
@@ -97,7 +100,7 @@ body {
 }
 .blog-options a{
 	float: right;
-margin-right: 200px;
+  margin-right: 200px;
 }
 .page-content {
   margin: 0 auto;
@@ -175,40 +178,38 @@ margin-right: 200px;
   margin-bottom: 15px;
 }
 .blog-title {
-  	color: black;
-  	font-size: 27px;
-  	border-bottom: 1px solid #000;
+	color: black;
+	font-size: 27px;
+	border-bottom: 1px solid #000;
 	margin-bottom: 15px !important;
 }
 .float_right {
-  	float: right;
+	float: right;
 }
 .blog-title h4 {
-  	text-align: center;
-    font-size: 30px;
+	text-align: center;
+  font-size: 30px;
 }
 .left-span {
-  	float: left;
-    width: 45%;
-    text-align: right;
-    padding-right: 20px;
-    margin-bottom: 5px;
-    margin-top: 5px;
+	float: left;
+  width: 45%;
+  text-align: right;
+  padding-right: 20px;
+  margin-bottom: 5px;
 }
 .right-span {
-    float: right;
-    width: 50%;
-    padding-left: 20px;
-    margin-bottom: 5px;
-    margin-top: 5px;
+  float: right;
+  width: 50%;
+  padding-left: 20px;
+  margin-bottom: 5px;
 }
 .blog-icon {
-	width: 70%;
-	margin: 0 auto 30px auto;
-	height: 200px
+	width: 60%;
+	margin: 0 auto 20px auto;
+	height: 170px
 }
 .blog-metadata {
-  height: 130px;
+  height: 110px;
 }
 .blog-description {
   float: left;
@@ -259,11 +260,11 @@ margin-right: 200px;
 	float: right;
 margin-top: 12px;
 }
-.min-height400 {
-	min-height: 400px !important;
+.min-height380 {
+	min-height: 380px !important;
 }
-.min-height200 {
-	min-height: 200px !important
+.min-height180 {
+	min-height: 180px !important
 }
 .moreellipses {
 	color: blue;
