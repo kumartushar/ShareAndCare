@@ -1,0 +1,6 @@
+<% blog_list.each do |blog| %>
+	<div class="blog-search-row" item-id="<%= blog.id %>">
+		<span class="glyphicon glyphicon-chevron-right"></span>
+		<span class="blog-name"><%= blog.title %></span>
+	</div>
+<% end %>

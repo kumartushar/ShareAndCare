@@ -1,1 +1,6 @@
-$("#blog-list-view").empty().append("<%= escape_javascript(render(:partial=>'blog_list', :locals=>{ :blog_list=> @search_result }))%>");
+<% if @search_result.blank? %>
+	$("#blog-search-result").empty().append("<%= escape_javascript(render(:partial=>'no_result_found'))%>");
+<% else %>
+	$("#blog-search-result").empty().append("<%= escape_javascript(render(:partial=>'blog_search_list', :locals=>{ :blog_list=> @search_result }))%>");
+<% end %>
+$("#blog-search-result").show();
