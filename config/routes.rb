@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :videos
+
   resources :blogs do
     collection do
       get 'search'

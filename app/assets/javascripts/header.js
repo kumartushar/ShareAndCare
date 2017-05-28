@@ -10,6 +10,9 @@ function setActiveTab() {
 		case "blogs":
 			$("#blogs-tabspace").removeClass("active").addClass("active");
 			break;
+		case "videos":
+			$("#videos-tabspace").removeClass("active").addClass("active");
+			break;
 		default:
 			$("#home-tabspace").removeClass("active").addClass("active");
 	}
