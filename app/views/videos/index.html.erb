@@ -1,6 +1,11 @@
 <div class="blog-header-view bg-grey">
-  <div class="blog-header">
-    <h1>BLOGS</h1>
+  <div id="mytube-header" class="blog-header padding-15">
+    <div class="logo">MyTube</div>
+    <input class="form-control mytube-search" id="mytube-search-field" type="text" placeholder="What are you looking for">
+    <span class="glyphicon glyphicon-search"></span>
+    <div class="mytube-actions">
+      <span class="glyphicon glyphicon-upload"></span>
+    </div>
   </div>
 </div>
 
@@ -29,3 +34,4 @@
 <br>
 
 <%= link_to 'New Video', new_video_path %>
+<%= javascript_include_tag "video_index" %>

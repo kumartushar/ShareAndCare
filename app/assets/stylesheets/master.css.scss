@@ -49,6 +49,9 @@ body {
 .padding-10 {
 	padding-top: 10px;
 }
+.padding-15 {
+  padding: 15px;
+}
 .navbar-brand {
 	color: white !important;
   font-size: 36px;
@@ -317,4 +320,25 @@ margin-top: 12px;
   margin-top: 20px;
   border-top: 1px solid;
   padding-top: 20px;
+}
+#mytube-header .logo {
+  display: inline;
+  margin-left: 50px;
+  font-size: 30px;
+  padding: 20px;
+  background-color: #8c94af;
+  cursor: pointer;
+}
+.mytube-search {
+  display: inline;
+  width: 30%;
+  margin-left: 120px;
+}
+#mytube-header .glyphicon-search {
+  margin-left: -30px;
+}
+.mytube-actions {
+  display: inline;
+  margin-left: 225px;
+  cursor: pointer;
 }
