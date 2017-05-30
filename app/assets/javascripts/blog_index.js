@@ -21,8 +21,6 @@ $(document).ready(function(e) {
 		closeCustomAutoComplete();
 	});
 
-	$('.selectpicker').selectpicker();
-
 });
 
 function closeCustomAutoComplete() {

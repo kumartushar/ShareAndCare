@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   resources :videos
 
+  post "/videos/transform_notification" => "videos#transform_notification"
+
   resources :blogs do
     collection do
       get 'search'
