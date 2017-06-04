@@ -9,27 +9,14 @@
   </div>
 </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Url</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @videos.each do |video| %>
-      <tr>
-        <td><%= video.title %></td>
-        <td><%= video.url %></td>
-        <td><%= link_to 'Show', video %></td>
-        <td><%= link_to 'Edit', edit_video_path(video) %></td>
-        <td><%= link_to 'Destroy', video, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="video_list">
+  <% @videos.each do |video| %>
+    <div class="video_block" item-id="<%= video.id %>">
+      <%= cl_image_tag("#{video.video_details["public_id"]}.jpg", :start_offset=>"70", :width=>300, :height=>200, :radius=>20, :border=>"5px_solid_black", :crop=>"scale", :resource_type=>"video") %>
+      <p class="video-title"><%= video.title %></p>
+    </div>
+  <% end %>
+</div>
 
 <br>
 

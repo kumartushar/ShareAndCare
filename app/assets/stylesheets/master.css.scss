@@ -346,3 +346,33 @@ margin-top: 12px;
 .bg_cadetblue {
   background-color: #D7F7EE;
 }
+.msg_notice {
+  padding: 15px;
+  text-align: center;
+  background-color: #4eec5e;
+  margin: 10px;
+}
+.video_list {
+  margin-top: 100px;
+}
+.video_block {
+  width: 25%;
+  padding: 10px;
+  cursor: pointer;
+}
+.video-title {
+  padding: 10px;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: left;
+}
+.video-play-box {
+  width: 60%;
+  margin-left: 131px;
+  margin-top: 50px;
+}
+.video-play-box p {
+  padding: 10px;
+line-height: 35px;
+font-size: 50px
+}
