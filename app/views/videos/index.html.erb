@@ -1,5 +1,5 @@
-<div class="blog-header-view bg_cadetblue">
-  <div id="mytube-header" class="blog-header padding-15">
+<div class="page-c-header mytube-header">
+  <div id="mytube-header" class="padding-15">
     <div class="logo">MyTube</div>
     <input class="form-control mytube-search" id="mytube-search-field" type="text" placeholder="What are you looking for">
     <span class="glyphicon glyphicon-search"></span>
@@ -8,14 +8,15 @@
     </div>
   </div>
 </div>
-
-<div class="video_list">
-  <% @videos.each do |video| %>
-    <div class="video_block" item-id="<%= video.id %>">
-      <%= cl_image_tag("#{video.video_details["public_id"]}.jpg", :start_offset=>"70", :width=>300, :height=>200, :radius=>20, :border=>"5px_solid_black", :crop=>"scale", :resource_type=>"video") %>
-      <p class="video-title"><%= video.title %></p>
-    </div>
-  <% end %>
+<div class="page-content">
+  <div class="video_list">
+    <% @videos.each do |video| %>
+      <div class="video_block" item-id="<%= video.id %>">
+        <%= cl_image_tag("#{video.video_details["public_id"]}.jpg", :start_offset=>"70", :width=>300, :height=>200, :radius=>20, :border=>"5px_solid_black", :crop=>"scale", :resource_type=>"video") %>
+        <p class="video-title"><%= video.title %></p>
+      </div>
+    <% end %>
+  </div>
 </div>
 
 <br>

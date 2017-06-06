@@ -70,34 +70,41 @@ body {
 }
 .container{
 	width: 100%;
-	padding-right: 0px;
-	padding-left: 0px;
-	margin-right: 0px;
-	margin-left: 0px;
+      padding-right: 0px;
+    padding-left: 0px; 
+}
+.navbar {
+  margin-bottom: 0;
+}
+.body-container {
+      margin-top: 51px;
 }
 .blog-options{
   position: fixed;
   width: 25%;
-  margin-top: 93px;
+  margin-top: 58px;
   height: 100vh;
   border-right: 1px solid #000;
   background-color: #d7d9e0;
 }
-.blog-header-view{
-	box-shadow: 10px 10px 5px grey;
+.page-c-header{
+  box-shadow: 6px 6px 6px grey;
   position: fixed;
   width: 100%;
+  height: 58px;
+  border-bottom: 1px solid;
 }
 .blog-list-view {
-  margin-top: 110px;
+  margin-top: 75px;
   width: 75%;
   float: right;
 }
-.blog-header h1 {
-  text-align: center;
-  font-weight: bold;
-  padding-bottom: 10px;
-  font-size: 48px;
+.blog-header span {
+      text-align: center;
+    display: block;
+    padding: 20px;
+    font-weight: bold;
+    font-size: 43px;
 }
 .search-field{
 	height: 40px;
@@ -111,7 +118,7 @@ body {
   margin-top: 15px;
   margin-left: 10px;
 }
-.page-content {
+.form-content {
   margin: 0 auto;
   width: 900px;
   border: solid;
@@ -321,11 +328,11 @@ margin-top: 12px;
   border-top: 1px solid;
   padding-top: 20px;
 }
-#mytube-header .logo {
+.mytube-header .logo {
   display: inline;
   margin-left: 50px;
   font-size: 30px;
-  padding: 20px;
+  padding: 6px;
   background-color: maroon;
   cursor: pointer;
   color: aliceblue;
@@ -335,7 +342,7 @@ margin-top: 12px;
   width: 30%;
   margin-left: 120px;
 }
-#mytube-header .glyphicon-search {
+.mytube-header .glyphicon-search {
   margin-left: -30px;
 }
 .mytube-actions {
@@ -353,7 +360,7 @@ margin-top: 12px;
   margin: 10px;
 }
 .video_list {
-  margin-top: 100px;
+  
 }
 .video_block {
   width: 25%;

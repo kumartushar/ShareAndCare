@@ -31,8 +31,7 @@ class VideosController < ApplicationController
     # http://cloudinary.com/documentation/rails_video_manipulation
     @active_page = "videos"
     video_public_id = "video_#{SecureRandom.urlsafe_base64}"
-    response = Cloudinary::Uploader.upload(params[:video][:target_file], :resource_type => :video,
-    :public_id => "#{video_public_id}")
+    response = Cloudinary::Uploader.upload(params[:video][:target_file], :resource_type => :video, :public_id => video_public_id)
     # Cloudinary::Uploader.upload_large(params[:video][:target_file], :resource_type => :video, :public_id => "my_folder/my_sub_folder/myvideo1", :eager => [{:width => 300, :height => 300, :crop => :pad}], :eager_async => true, :eager_notification_url => "http://c45a1454.ngrok.io/videos/transform_notification")
     @video = Video.new({title: video_params[:title]})
     @video.video_details = response
