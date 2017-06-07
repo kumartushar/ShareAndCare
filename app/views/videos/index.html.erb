@@ -8,18 +8,35 @@
     </div>
   </div>
 </div>
-<div class="page-content">
-  <div class="video_list">
-    <% @videos.each do |video| %>
-      <div class="video_block" item-id="<%= video.id %>">
-        <%= cl_image_tag("#{video.video_details["public_id"]}.jpg", :start_offset=>"70", :width=>300, :height=>200, :radius=>20, :border=>"5px_solid_black", :crop=>"scale", :resource_type=>"video") %>
-        <p class="video-title"><%= video.title %></p>
+
+<div class="page-content mt-content">
+  <div class="mt-feed-section-list">
+    <div class="mt-feed-section">
+      <div class="mt-section-title-table">
+        <div class="mt-section-title-row">
+          <span class="mt-section-title-text">Recommended</span>
+        </div>
       </div>
-    <% end %>
+
+      <div class="mt-multirow-shelf">
+        <ul class="mt-shelf-content">
+          <% @videos.each do |video| %>
+            <li class="mt-shelf-grid-item">
+              <div class="mt-lockup-video" data-context-item-id="<%= video.id %>">
+                <div class="mt-lockup-thumbnail">
+                  <%= cl_image_tag("#{video.video_details["public_id"]}.jpg", :start_offset=>"70", :width=>196, :height=>100, :radius=>20, :border=>"5px_solid_black", :crop=>"scale", :resource_type=>"video") %>
+                </div>
+                <div class="mt-lockup-content">
+                  <div class="mt-lockup-title"><%= video.title %></div>
+                  <div class="mt-lockup-meta"></div>
+                </div>
+              </div>
+            </li>
+          <% end %>          
+        </ul>
+      </div>
+    </div>
   </div>
 </div>
 
-<br>
-
-<%= link_to 'New Video', new_video_path %>
 <%= javascript_include_tag "video_index" %>

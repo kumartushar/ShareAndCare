@@ -359,9 +359,6 @@ margin-top: 12px;
   background-color: #4eec5e;
   margin: 10px;
 }
-.video_list {
-  
-}
 .video_block {
   width: 25%;
   padding: 10px;
@@ -380,6 +377,78 @@ margin-top: 12px;
 }
 .video-play-box p {
   padding: 10px;
-line-height: 35px;
-font-size: 50px
+  line-height: 35px;
+  font-size: 50px
+}
+.mt-content {
+  padding-top: 58px;
+}
+.mt-shelf-grid-item {
+  display: inline-block;
+  margin-bottom: 12px;
+  margin-right: 10px;
+  width: 196px;
+}
+.mt-feed-section-list {
+  margin-top: 40px;
+  margin-left: 30px;
+}
+.mt-feed-section {
+  padding: 15px;
+  border-bottom: 1px solid #e2e2e2;
+}
+.mt-section-title-table {
+  display: table;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  background: transparent;
+  padding-bottom: 10px;
+}
+.mt-section-title-row {
+  display: table-row;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  background: transparent;
+}
+.mt-section-title-text {
+  font-weight: bold;
+  font-size: 15px;
+  padding-bottom: 10px;
+}
+.mt-shelf-content {
+  margin: 0px;
+  padding: 0px;
+}
+.mt-lockup-video {
+  color: #767676;
+  line-height: 1.3em;
+  position: relative;
+  cursor: pointer;
+}
+.mt-lockup-thumbnail {
+  margin-bottom: 4px;
+  display: block;
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+.mt-lockup-content {
+  overflow: hidden;
+  position: relative;
+}
+.mt-lockup-title {
+  margin-right: 20px;
+  font-size: 13px;
+  margin-bottom: 1px;
+  max-width: 196px;
+  color: #167ac6;
+  font-weight: bold;
+}
+.mt-lockup-meta {
+  
 }
