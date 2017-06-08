@@ -1,3 +1,3 @@
 class Video < ActiveRecord::Base
-	serialize :video_details, HashWithIndifferentAccess
+	serialize :video_details, Hash
 end

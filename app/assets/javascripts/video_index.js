@@ -3,8 +3,8 @@ $(document).ready(function(e) {
 		window.location.href = "/videos/new";
 	});
 
-	$(document).on("click", ".video_block", function(e) {
-		var videoID = $(e.target).closest(".video_block").attr("item-id");
+	$(document).on("click", ".mt-lockup-video", function(e) {
+		var videoID = $(e.target).closest(".mt-lockup-video").attr("data-context-item-id");
 		window.location.href = "/videos/" + videoID;
 	});
 });

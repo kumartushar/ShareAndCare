@@ -462,21 +462,46 @@ body {
   width: 150px !important;
 }
 .mt-add-tag-btn {
-      margin-left: -3px;
-    margin-top: -4px;
+  margin-left: -3px;
+  margin-top: -4px;
 }
 .mt-upload-prompt-box {
-      width: 60%;
-    height: 210px;
-    background-color: white;
+  width: 60%;
+  height: 210px;
+  background-color: #d5d5db;;
 }
-.mt-start-upload-button, .mt-start-upload-content {
-      height: 52%;
-    width: 60%;
-    padding: 10px 0 10px 0;
+.mt-start-upload-button {
+  height: 52%;
+  width: 60%;
+  padding: 10px 0 10px 0;
+}
+.mt-start-upload-content {
+  height: 52%;
+  width: 60%;
+  padding: 25px 0 10px 0;
 }
 .mt-upload-file-input {
   width: 100%;
-    height: 100%;
-    cursor: pointer;
+  height: 100%;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background: url('upload_video-icon.png') center center no-repeat #e4e4e4;
+  border-radius: 20px;
+  background-size: 150px 100px;
+  padding: 105px 0 0 0;
+}
+.mt-start-upload-title {
+  font-size: 22px;
+}
+.mt-upload-widget {
+  margin-bottom: 45px;
+  padding: 15px;
+  background-color: #E9E9F1;
+}
+.margin-top-25 {
+  margin-top: 25px;
 }
