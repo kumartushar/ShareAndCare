@@ -1,5 +1,5 @@
 <div class="form-content">
-  <%= form_for @video, :html => { :multipart => true } do |f| %>
+  <%= form_for @video, :html => { :multipart => true, :class => 'basic-form' } do |f| %>
     <% if @video.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(@video.errors.count, "error") %> prohibited this video from being saved:</h2>
@@ -12,31 +12,40 @@
       </div>
     <% end %>
 
-    <div class="field">
-      <%= f.label :title %><br>
-      <%= f.text_field :title %>
+      <div class="mt-upload-widget padding-15">
+        <div class="mt-upload-prompt-box center-block">
+          <div class="mt-start-upload-button center-block">
+            <%= file_field_tag "target_video", :name => "video[target_file]", :class => "mt-upload-file-input" %>
+          </div>
+          <div class="mt-start-upload-content center-block"></div>
+        </div>
+      </div>
+
+    <div class="field form-field">
+      <%= f.label :title, :class => "form-label" %>
+      <%= f.text_field :title, :class => "form-input", :placeholder => "Video Title" %>
     </div>
 
-    <div class="field">
-      <%= f.label :description %><br>
-      <%= f.text_area :description %>
+    <div class="field form-field">
+      <%= f.label :description, :class => "form-label" %>
+      <%= f.text_area :description, :class => "text-area height-100", :placeholder => "Video Description" %>
     </div>
     <!-- options_from_collection_for_select(@project.people, "id", "name") can be used -->
-    <div class="field">
-      <%= f.label :category %><br>
-      <%= select_tag("video[category]", options_for_select({ "cat1" => "cat1", "cat2" => "cat2" })) %>
+    <div class="field form-field">
+      <%= f.label :category, :class => "form-label" %>
+      <%= select_tag("video[category]", options_for_select({ "cat1" => "cat1", "cat2" => "cat2" }), {:class => 'form-input'}) %>
     </div>
 
-    <div class="field">
-      <%= f.label :tags %><br>
-      <%= f.text_field :tags %>
+    <div class="field form-field margin-bottom-35">
+      <%= f.label :tags, :class => "form-label" %>
+      <%= f.text_field :tags, :class => 'form-input width-150' %>
+      <button type="button" class="btn btn-primary mt-add-tag-btn">+</button>
     </div>
     
-    <div class="field">
-      <label for="file">Video</label> <%= file_field_tag "target_video", :name => "video[target_file]" %>
-    </div>
-    <div class="field">
-      <%= f.submit %>
+    <div class="horizontal-line"></div>
+    <div class="form-btns">
+      <%= link_to 'Cancel', videos_path, {:class => "btn btn-default sc-btn"} %>
+      <%= f.submit "Upload", :class => "btn btn-primary btn-submit" %>
     </div>
   <% end %>
 </div>

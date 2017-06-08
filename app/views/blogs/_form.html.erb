@@ -19,22 +19,23 @@
   </div>
   <div class="field form-field">
     <%= f.label :category, :class => "form-label" %>
-    <%= f.text_field :category, :class => "form-input" %>
+    <%= select_tag("blog[category]", options_for_select({ "cat1" => "cat1", "cat2" => "cat2" }), {:class => 'form-input'}) %>
   </div>
   <div class="field form-field">
     <%= f.label :sub_category, :class => "form-label" %>
-    <%= f.text_field :sub_category, :class => "form-input" %>
+    <%= select_tag("video[sub_category]", options_for_select({ "sub-cat1" => "sub-cat1", "sub-cat2" => "sub-cat2" }), {:class => 'form-input'}) %>
   </div>
   <div class="field form-field" id="blog-description-block">
     <%= f.label :description, :class => "form-label" %>
     <%= f.text_area :description, :class => "text-area tinymce", :placeholder => "Enter Blog Description" %>
   </div>
-  <div class="field form-field">
+  <div class="field form-field margin-bottom-35">
     <%= f.label :avatar, "Blog Cover Image", :class => "form-label" %>
     <%= f.file_field :avatar %>
     <%= f.hidden_field :avatar_cache %>
   </div>
-  <div class="actions form-btns">
+  <div class="horizontal-line"></div>
+  <div class="form-btns">
     <%= link_to 'Cancel', blogs_path, {:class => "btn btn-default sc-btn"} %>
     <%= f.submit 'Create', :class => "btn btn-primary btn-submit" %>
   </div>
