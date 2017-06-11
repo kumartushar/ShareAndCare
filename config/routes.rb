@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'admins/settings'
+
   resources :videos
 
   post "/videos/transform_notification" => "videos#transform_notification"
+  get '/settings' => 'admins#settings'
 
   resources :blogs do
     collection do

@@ -1,0 +1,119 @@
+// Place all the styles related to the blogs controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.blog-header span {
+    text-align: center;
+    display: block;
+    padding: 0px 20px 20px 20px;
+    font-weight: bold;
+    font-size: 43px;
+}
+.blog-options{
+	position: fixed;
+	width: 25%;
+	margin-top: 58px;
+	height: 100vh;
+	border-right: 1px solid #000;
+	background-color: #d7d9e0;
+}
+.blog-options .add-new-btn {
+	padding: 16px 10px 10px 10px;
+	border-bottom: 1px solid #545E5F;
+}
+.blog-search-box {
+	margin-top: 15px;
+	margin-left: 10px;
+}
+.blog-search-box .glyphicon-search {
+	margin-left: -32px;
+}
+.blog-search-result {
+	margin-left: 12px;
+	width: 256px;
+	z-index: 1007;
+	background-color: white;
+	display: block;
+	max-height: 140px;
+	overflow: scroll;
+}
+.blog-list-view {
+	margin-top: 75px;
+	width: 75%;
+	float: right;
+}
+.blog-row {
+	padding: 10px;
+	border-bottom: 1px solid #000;
+	background-color: #C7D0F6;
+	display: inline-block;
+	width: 48%;
+	cursor: pointer;
+	max-height: 600px;
+	min-height: 400px;
+	margin: 5px;
+	float: left;
+	margin: 5px;
+}
+.blog-title {
+	color: black;
+	font-size: 27px;
+	border-bottom: 1px solid #000;
+	margin-bottom: 15px !important;
+}
+.blog-title h4 {
+	text-align: center;
+  font-size: 30px;
+}
+
+.blog-icon {
+	width: 82%;
+	height: 170px;
+	margin: 0 auto;
+}
+.blog-metadata {
+	height: 110px;
+	margin-top: 15px;
+}
+.blog-description {
+	float: left;
+	margin-top: 10px;
+}
+.blog-sm-header {
+	width: 65% !important;
+	padding-right: 224px;
+}
+.blog-categories {
+	overflow: auto;
+}
+.blog-date-details {
+	overflow: auto;
+}
+.blog_meta_color {
+	background-color: #8e97b5;
+}
+#blog-description-block .mce-tinymce.mce-container {
+	margin-left: 250px;
+}
+.blog-right {
+	float: right;
+	margin-right: 12px;
+}
+.blog-left {
+	float: left;
+	margin-left: 12px;
+}
+.blog-search-row {
+	height: 35px;
+	border-bottom: 1px solid;
+	padding: 10px;
+	cursor: pointer
+}
+.blog-search-row .blog-name {
+	font-size: 18px;
+	margin-left: 10px;
+}
+.blog-filters {
+	margin-top: 20px;
+	border-top: 1px solid;
+	padding-top: 20px;
+}

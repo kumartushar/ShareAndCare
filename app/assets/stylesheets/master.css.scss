@@ -79,14 +79,6 @@ body {
 .body-container {
       margin-top: 51px;
 }
-.blog-options{
-  position: fixed;
-  width: 25%;
-  margin-top: 58px;
-  height: 100vh;
-  border-right: 1px solid #000;
-  background-color: #d7d9e0;
-}
 .page-c-header{
   box-shadow: 6px 6px 6px grey;
   position: fixed;
@@ -94,29 +86,9 @@ body {
   height: 58px;
   border-bottom: 1px solid;
 }
-.blog-list-view {
-  margin-top: 75px;
-  width: 75%;
-  float: right;
-}
-.blog-header span {
-      text-align: center;
-    display: block;
-    padding: 20px;
-    font-weight: bold;
-    font-size: 43px;
-}
 .search-field{
 	height: 40px;
 	width: 260px;
-}
-.blog-options .add-new-btn {
-  padding: 16px 10px 10px 10px;
-  border-bottom: 1px solid #545E5F;
-}
-.blog-search-box {
-  margin-top: 15px;
-  margin-left: 10px;
 }
 .form-content {
   margin: 0 auto;
@@ -182,31 +154,8 @@ body {
 	padding: 8px;
   width: 100px;
 }
-.blog-row {
-  padding: 10px;
-  border-bottom: 1px solid #000;
-  background-color: #C7D0F6;
-  display: inline-block;
-  width: 48%;
-  cursor: pointer;
-  max-height: 600px;
-  min-height: 400px;
-  margin: 5px;
-  float: left;
-  margin: 5px;
-}
-.blog-title {
-	color: black;
-	font-size: 27px;
-	border-bottom: 1px solid #000;
-	margin-bottom: 15px !important;
-}
 .float_right {
 	float: right;
-}
-.blog-title h4 {
-	text-align: center;
-  font-size: 30px;
 }
 .left-span {
 	float: left;
@@ -220,19 +169,6 @@ body {
   width: 50%;
   padding-left: 20px;
   margin-bottom: 5px;
-}
-.blog-icon {
-	width: 82%;
-  height: 170px;
-  margin: 0 auto;
-}
-.blog-metadata {
-  height: 110px;
-  margin-top: 15px;
-}
-.blog-description {
-  float: left;
-  margin-top: 10px;
 }
 .page-header-block {
 	min-height: 20px;
@@ -249,10 +185,6 @@ body {
 .width_35_p {
 	width: 35% !important;
 }
-.blog-sm-header {
-	width: 65% !important;
-	padding-right: 224px;
-}
 .large-font {
 	font-size: 66px !important;
 }
@@ -261,15 +193,6 @@ body {
 }
 .color_light_pink {
 	background-color: #C0C1C8;
-}
-.blog-categories {
-	overflow: auto;
-}
-.blog-date-details {
-	overflow: auto;
-}
-.blog_meta_color {
-	background-color: #8e97b5;
 }
 .div_center {
 	width: 50%;
@@ -284,68 +207,8 @@ body {
 .moreellipses {
 	color: blue;
 }
-#blog-description-block .mce-tinymce.mce-container {
-	margin-left: 250px;
-}
-.blog-search-box .glyphicon-search {
-  margin-left: -32px;
-}
-.blog-right {
-  float: right;
-  margin-right: 12px;
-}
-.blog-left {
-  float: left;
-  margin-left: 12px;
-}
-.blog-search-result {
-  margin-left: 12px;
-  width: 256px;
-  z-index: 1007;
-  background-color: white;
-  display: block;
-  max-height: 140px;
-  overflow: scroll;
-}
-.blog-search-row {
-  height: 35px;
-  border-bottom: 1px solid;
-  padding: 10px;
-  cursor: pointer
-}
-.blog-search-row .blog-name {
-  font-size: 18px;
-  margin-left: 10px;
-}
 .display-none {
   display: none;
-}
-.blog-filters {
-  margin-top: 20px;
-  border-top: 1px solid;
-  padding-top: 20px;
-}
-.mytube-header .logo {
-  display: inline;
-  margin-left: 50px;
-  font-size: 30px;
-  padding: 6px;
-  background-color: maroon;
-  cursor: pointer;
-  color: aliceblue;
-}
-.mytube-search {
-  display: inline;
-  width: 30%;
-  margin-left: 120px;
-}
-.mytube-header .glyphicon-search {
-  margin-left: -30px;
-}
-.mytube-actions {
-  display: inline;
-  margin-left: 225px;
-  cursor: pointer;
 }
 .bg_cadetblue {
   background-color: #D7F7EE;
@@ -355,99 +218,6 @@ body {
   text-align: center;
   background-color: #4eec5e;
   margin: 10px;
-}
-.video_block {
-  width: 25%;
-  padding: 10px;
-  cursor: pointer;
-}
-.video-title {
-  padding: 10px;
-  font-weight: bold;
-  font-size: 20px;
-  text-align: left;
-}
-.video-play-box {
-  width: 60%;
-  margin-left: 131px;
-  margin-top: 50px;
-}
-.video-play-box p {
-  padding: 10px;
-  line-height: 35px;
-  font-size: 50px
-}
-.mt-content {
-  padding-top: 58px;
-}
-.mt-shelf-grid-item {
-  display: inline-block;
-  margin-bottom: 12px;
-  margin-right: 10px;
-  width: 196px;
-}
-.mt-feed-section-list {
-  margin-top: 40px;
-  margin-left: 30px;
-}
-.mt-feed-section {
-  padding: 15px;
-  border-bottom: 1px solid #e2e2e2;
-}
-.mt-section-title-table {
-  display: table;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  background: transparent;
-  padding-bottom: 10px;
-}
-.mt-section-title-row {
-  display: table-row;
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  background: transparent;
-}
-.mt-section-title-text {
-  font-weight: bold;
-  font-size: 15px;
-  padding-bottom: 10px;
-}
-.mt-shelf-content {
-  margin: 0px;
-  padding: 0px;
-}
-.mt-lockup-video {
-  color: #767676;
-  line-height: 1.3em;
-  position: relative;
-  cursor: pointer;
-}
-.mt-lockup-thumbnail {
-  margin-bottom: 4px;
-  display: block;
-  position: relative;
-  height: 100%;
-  overflow: hidden;
-}
-.mt-lockup-content {
-  overflow: hidden;
-  position: relative;
-}
-.mt-lockup-title {
-  margin-right: 20px;
-  font-size: 13px;
-  margin-bottom: 1px;
-  max-width: 196px;
-  color: #167ac6;
-  font-weight: bold;
-}
-.mt-lockup-meta {
-  
 }
 .horizontal-line {
   border-bottom: 1px solid grey;
@@ -460,47 +230,6 @@ body {
 }
 .width-150 {
   width: 150px !important;
-}
-.mt-add-tag-btn {
-  margin-left: -3px;
-  margin-top: -4px;
-}
-.mt-upload-prompt-box {
-  width: 60%;
-  height: 210px;
-  background-color: #d5d5db;;
-}
-.mt-start-upload-button {
-  height: 52%;
-  width: 60%;
-  padding: 10px 0 10px 0;
-}
-.mt-start-upload-content {
-  height: 52%;
-  width: 60%;
-  padding: 25px 0 10px 0;
-}
-.mt-upload-file-input {
-  width: 100%;
-  height: 100%;
-  cursor: pointer;
-  display: inline-block;
-  overflow: hidden;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  background: url('upload_video-icon.png') center center no-repeat #e4e4e4;
-  border-radius: 20px;
-  background-size: 150px 100px;
-  padding: 105px 0 0 0;
-}
-.mt-start-upload-title {
-  font-size: 22px;
-}
-.mt-upload-widget {
-  margin-bottom: 45px;
-  padding: 15px;
-  background-color: #E9E9F1;
 }
 .margin-top-25 {
   margin-top: 25px;

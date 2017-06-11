@@ -1,0 +1,163 @@
+// Place all the styles related to the videos controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.mytube-header {
+  padding: 0px 15px 15px 15px;
+}
+.mytube-header .logo {
+	display: inline;
+	margin-left: 50px;
+	font-size: 30px;
+	padding: 6px;
+	background-color: maroon;
+	cursor: pointer;
+	color: aliceblue;
+}
+.mytube-header .glyphicon-search {
+	margin-left: -30px;
+}
+.mytube-search {
+	display: inline;
+	width: 30%;
+	margin-left: 120px;
+}
+
+.mytube-actions {
+	display: inline;
+	margin-left: 225px;
+	cursor: pointer;
+}
+.video_block {
+	width: 25%;
+	padding: 10px;
+	cursor: pointer;
+}
+.video-title {
+	padding: 10px;
+	font-weight: bold;
+	font-size: 20px;
+	text-align: left;
+}
+.video-play-box {
+	width: 60%;
+	margin-left: 131px;
+	margin-top: 50px;
+}
+.video-play-box p {
+	padding: 10px;
+	line-height: 35px;
+	font-size: 50px
+}
+.mt-content {
+  padding-top: 58px;
+}
+.mt-shelf-grid-item {
+  display: inline-block;
+  margin-bottom: 12px;
+  margin-right: 10px;
+  width: 196px;
+}
+.mt-feed-section-list {
+  margin-top: 40px;
+  margin-left: 30px;
+}
+.mt-feed-section {
+  padding: 15px;
+  border-bottom: 1px solid #e2e2e2;
+}
+.mt-section-title-table {
+  display: table;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  background: transparent;
+  padding-bottom: 10px;
+}
+.mt-section-title-row {
+  display: table-row;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  background: transparent;
+}
+.mt-section-title-text {
+  font-weight: bold;
+  font-size: 15px;
+  padding-bottom: 10px;
+}
+.mt-shelf-content {
+  margin: 0px;
+  padding: 0px;
+}
+.mt-lockup-video {
+  color: #767676;
+  line-height: 1.3em;
+  position: relative;
+  cursor: pointer;
+}
+.mt-lockup-thumbnail {
+  margin-bottom: 4px;
+  display: block;
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+.mt-lockup-content {
+  overflow: hidden;
+  position: relative;
+}
+.mt-lockup-title {
+  margin-right: 20px;
+  font-size: 13px;
+  margin-bottom: 1px;
+  max-width: 196px;
+  color: #167ac6;
+  font-weight: bold;
+}
+.mt-lockup-meta {
+  
+}
+.mt-add-tag-btn {
+  margin-left: -3px;
+  margin-top: -4px;
+}
+.mt-upload-prompt-box {
+  width: 60%;
+  height: 210px;
+  background-color: #d5d5db;;
+}
+.mt-start-upload-button {
+  height: 52%;
+  width: 60%;
+  padding: 10px 0 10px 0;
+}
+.mt-start-upload-content {
+  height: 52%;
+  width: 60%;
+  padding: 25px 0 10px 0;
+}
+.mt-upload-file-input {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background: url('upload_video-icon.png') center center no-repeat #e4e4e4;
+  border-radius: 20px;
+  background-size: 150px 100px;
+  padding: 105px 0 0 0;
+}
+.mt-start-upload-title {
+  font-size: 22px;
+}
+.mt-upload-widget {
+  margin-bottom: 45px;
+  padding: 15px;
+  background-color: #E9E9F1;
+}
