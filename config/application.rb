@@ -1,6 +1,10 @@
 require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
+require 'log4r'
+require 'log4r/yamlconfigurator'
+require 'log4r/outputter/datefileoutputter'
+include Log4r
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -8,6 +12,10 @@ Bundler.require(*Rails.groups)
 
 module ShareAndCare
   class Application < Rails::Application
+
+    log4r_config = YAML.load_file(File.join(Rails.root, 'config', 'log4r.yml'))
+    YamlConfigurator.decode_yaml( log4r_config["log4r_config"] )
+    config.logger = Log4r::Logger[Rails.env]
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
