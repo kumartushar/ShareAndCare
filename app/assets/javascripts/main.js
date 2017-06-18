@@ -21,6 +21,19 @@ function isValidKeyPressedForSearch(keyCode) {
   return isValid;
 }
 
+function showSmallModal(title, body) {
+  showModal(title, body, "small");
+}
+
+function showLargeModal(title, body) {
+  showModal(title, body, "large");
+}
+function showModal(title, body, sizeClass) {
+  $("#my-modal-header-text").text(title);
+  $("#my-modal-body-text").text(body);
+  sizeClass == "small" ? $("#my-modal-dialog").removeClass("modal-lg").addClass("modal-sm") : $("#my-modal-dialog").removeClass("modal-sm").addClass("modal-lg");
+  $("#showModalPopupBtn").trigger('click');
+}
 // function isValidKeyPressedForSearch(keycode) {
 //   var result = (/[a-zA-Z0-9-_ ]/.test(inp));
 //   return result;

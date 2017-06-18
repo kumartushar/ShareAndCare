@@ -1,0 +1,6 @@
+<% if @success %>
+	resetCategoryFields();
+	showSmallModal("Success", "Category Added Successfully.");
+<% else %>
+	showSmallModal("Error", "Error occured while adding category.");
+<% end %>

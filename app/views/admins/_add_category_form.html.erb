@@ -1,0 +1,7 @@
+<div class="st-add-cat-form">
+	<%= form_for @category, url: {action: "add_category"}, html: {id: "add_#{type}_category_form", class: "st-cat-form", remote: true} do |f| %>
+		<%= f.text_field :name, placeholder: "Enter category", :class => "required validate[required]", :id => "#{type}_category_name" %>
+		<%= f.hidden_field :cat_type, value: "#{type}_category" %>
+		<%= f.submit "Add" %>
+	<% end %>
+</div>

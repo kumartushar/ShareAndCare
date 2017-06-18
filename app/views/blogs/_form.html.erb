@@ -19,11 +19,7 @@
   </div>
   <div class="field form-field">
     <%= f.label :category, :class => "form-label" %>
-    <%= select_tag("blog[category]", options_for_select({ "cat1" => "cat1", "cat2" => "cat2" }), {:class => 'form-input'}) %>
-  </div>
-  <div class="field form-field">
-    <%= f.label :sub_category, :class => "form-label" %>
-    <%= select_tag("video[sub_category]", options_for_select({ "sub-cat1" => "sub-cat1", "sub-cat2" => "sub-cat2" }), {:class => 'form-input'}) %>
+    <%= select_tag("blog[category]", options_for_select(blog_category_list),  {:class => 'form-input'}) %>
   </div>
   <div class="field form-field" id="blog-description-block">
     <%= f.label :description, :class => "form-label" %>

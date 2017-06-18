@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   post "/videos/transform_notification" => "videos#transform_notification"
   get '/settings' => 'admins#settings'
+  post 'admins/add_category' => "admins#add_category"
 
   resources :blogs do
     collection do

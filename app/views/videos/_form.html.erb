@@ -41,7 +41,7 @@
       <!-- options_from_collection_for_select(@project.people, "id", "name") can be used -->
       <div class="field form-field">
         <%= f.label :category, :class => "form-label" %>
-        <%= select_tag("video[category]", options_for_select({ "cat1" => "cat1", "cat2" => "cat2" }), {:class => 'form-input'}) %>
+        <%= select_tag("video[category]", options_for_select(video_category_list), {:class => 'form-input'}) %>
       </div>
 
       <div class="field form-field margin-bottom-35">

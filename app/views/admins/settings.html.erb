@@ -8,11 +8,19 @@
 	<div class="settings-feed-1">
 		<div class="settings-add-options">
 			<div class="st-add-blog-cat-box">
-				
+				<div class="st-add-cat-btn">
+					<span>Add Blog Category:</span>
+				</div>
+				<%= render partial: "add_category_form", locals: {type: "blog"} %>
 			</div>
 			<div class="st-add-video-cat-box">
-				
+				<div class="st-add-cat-btn">
+					<span>Add Video Category:</span>
+				</div>
+				<%= render partial: "add_category_form", locals: {type: "video"} %>
 			</div>
 		</div>
+		<div class="horizontal-line"></div>
 	</div>
 </div>
+<%= javascript_include_tag "admin_settings" %>

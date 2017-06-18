@@ -13,4 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require JQuery_Libs/jquery.validationEngine
+//= require JQuery_Libs/jquery.validationEngine-en
 //= require main
