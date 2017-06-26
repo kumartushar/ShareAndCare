@@ -2,7 +2,11 @@ Rails.application.routes.draw do
 
   get 'admins/settings'
 
-  resources :videos
+  resources :videos do
+    collection do
+      get 'search'
+    end
+  end
 
   post "/videos/transform_notification" => "videos#transform_notification"
   get '/settings' => 'admins#settings'

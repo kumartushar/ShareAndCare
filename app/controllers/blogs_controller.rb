@@ -67,8 +67,4 @@ class BlogsController < ApplicationController
     def blog_params
       params.require(:blog).permit(:title, :category, :sub_category, :description, :avatar, :published_status, :published_on)
     end
-
-    def get_unescaped_search_text
-      URI.unescape(params[:search_text].strip)
-    end
 end

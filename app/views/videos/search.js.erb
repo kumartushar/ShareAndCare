@@ -1,0 +1,5 @@
+<% if @search_result.blank? %>
+	$("#mytube-search-result").empty().hide();
+<% else %>
+	$("#mytube-search-result").empty().append("<%= escape_javascript(render(:partial=>'video_search_list', :locals=>{ :video_list=> @search_result }))%>").show();
+<% end %>

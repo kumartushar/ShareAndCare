@@ -234,3 +234,19 @@ body {
 .margin-top-25 {
   margin-top: 25px;
 }
+.tag-item-box {
+  display: inline-block;
+  padding: 5px;
+  background-color: darkgrey;
+  margin-bottom: 5px;
+  margin-right: 5px;
+}
+.tag-item {
+  display: inline-block;
+}
+.tag-item-delete-icon {
+  display: inline-block;
+  padding: 0px 5px 0px 5px;
+  color: white;
+  cursor: pointer;
+}

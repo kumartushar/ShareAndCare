@@ -20,4 +20,8 @@ class ApplicationController < ActionController::Base
   def flash_message(flash_message)
     flash[:error] =  t(flash_message)
   end
+
+  def get_unescaped_search_text
+      URI.unescape(params[:search_text].strip)
+    end
 end

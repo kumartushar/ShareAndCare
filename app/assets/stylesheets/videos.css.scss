@@ -161,3 +161,25 @@
   padding: 15px;
   background-color: #E9E9F1;
 }
+.mytube-search-result {
+  width: 29%;
+  margin-left: 24%; 
+  min-height: 30px;
+  max-height: 170px;
+  z-index: 1035;
+  background-color: white;
+  margin-top: -16px;
+  border: 1px solid;
+  border-top: 0px;
+}
+.video-search-row {
+  cursor: pointer;
+}
+.tag-container {
+  width: 38%;
+  padding: 5px;
+  height: 60px;
+  overflow: auto;
+  margin-left: 245px;
+  background-color: white;
+}

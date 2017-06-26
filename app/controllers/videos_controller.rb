@@ -55,6 +55,12 @@ class VideosController < ApplicationController
     puts "params = #{params}"
   end
 
+  def search
+    @active_page = "videos"
+    @search_text = get_unescaped_search_text
+    @search_result = Video.search ThinkingSphinx::Query.escape("*#{@search_text}*")
+  end
+
   private
     def set_video
       @video = Video.find(params[:id])

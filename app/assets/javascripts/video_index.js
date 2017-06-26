@@ -1,4 +1,10 @@
 $(document).ready(function(e) {
+	customAutoComplete({
+		id: "mytube-search-field",
+		url: "/videos/search",
+		isSearchForBlank: false
+	});
+
 	$(document).on("click", ".mytube-actions .glyphicon-upload", function(e){
 		window.location.href = "/videos/new";
 	});

@@ -1,3 +1,4 @@
+<%= stylesheet_link_tag "common/jquery.mCustomScrollbar"%>
 <div class="form-content">
   <%= form_for @video, :html => { :multipart => true, :class => 'basic-form' } do |f| %>
     <% if @video.errors.any? %>
@@ -44,28 +45,23 @@
         <%= select_tag("video[category]", options_for_select(video_category_list), {:class => 'form-input'}) %>
       </div>
 
-      <div class="field form-field margin-bottom-35">
+      <div class="field form-field">
         <%= f.label :tags, :class => "form-label" %>
-        <%= f.text_field :tags, :class => 'form-input width-150', :placeholder => "Enter Tag" %>
-        <button type="button" class="btn btn-primary mt-add-tag-btn">+</button>
+        <%= f.text_field :tags, :class => 'form-input width-150', :placeholder => "Enter Tag", :id => "tag-input-field" %>
+        <button id="mt-add-tag-btn" type="button" class="btn btn-primary mt-add-tag-btn">+</button>
       </div>
+
+      <div class="tag-container">
+      </div>
+
     </div>
     
-    <div class="horizontal-line"></div>
+    <div class="horizontal-line margin-top-25"></div>
     <div class="form-btns">
       <%= link_to 'Cancel', videos_path, {:class => "btn btn-default sc-btn"} %>
       <%= f.submit "Upload", :id => "mt-upload-submit", :class => "btn btn-primary btn-submit", :disabled => true %>
     </div>
   <% end %>
 </div>
-<script type="text/javascript">
-  $(document).ready(function(e) {
-    $("#mt-upload-meta").find("*").prop("disabled", true);
-    $("#target_video").change(function(e){
-      $("#mt-file-upload-title").text("File Selected: " + this.value);
-      $("#mt-file-title-box").show();
-      $("#mt-upload-meta").find("*").prop("disabled", false);
-      $("#mt-upload-submit").prop("disabled", false);
-    });
-  });
-</script>
+<%= javascript_include_tag "JQuery_Libs/jquery.mCustomScrollbar.concat.min" %>
+<%= javascript_include_tag "videos_form" %>
