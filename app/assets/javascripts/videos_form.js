@@ -11,7 +11,7 @@ $(document).ready(function(e) {
     mouseWheel : true,
     mouseWheelPixels : "auto",
     scrollButtons: {
-      enable: true,
+      enable: false,
       scrollAmount: "auto",
       scrollType: "stepless"
     },
@@ -55,15 +55,19 @@ $(document).ready(function(e) {
   });
 
   $(document).on("click", "#mt-add-tag-btn", function(e) {
-    var tag = $("#tag-input-field").val();
-    if (!is_already_exist(tag)) {
-      tagCount += 1;
-      $(".tag-container #mCSB_1_container").append('<div class="tag-item-box"><div class="tag-item"><span class="tag-text" name="video[tag['+ tagCount +']]">' + tag + '</span></div><div class="tag-item-delete-icon">x</div></div>');
-      $("#tag-input-field").val('');
-      changeVisibilityOfTagContainer();
+    var tag = $("#tag-input-field").val().trim();
+    if (tag == "") {
+      alert("Blank tag cannot be added");
     } else {
-      // showAlreadyExistsMsg
-      alert("already exist");
+      if (!is_already_exist(tag)) {
+        tagCount += 1;
+        $(".tag-container").append('<div class="tag-item-box"><div class="tag-item"><span class="tag-text">' + tag + '</span><input type="hidden" name="video[v_tags['+ tagCount +']]" value="' + tag + '"></div><div class="tag-item-delete-icon">x</div></div>');
+        $("#tag-input-field").val('');
+        changeVisibilityOfTagContainer();
+      } else {
+        // showAlreadyExistsMsg
+        alert("already exist");
+      }
     }
   });
 
@@ -75,12 +79,13 @@ $(document).ready(function(e) {
 });
 
 function is_already_exist(tag) {
-  jQuery.each($(".tag-text"), function(i, node) {
+  var result = false;
+  $.each($(".tag-text"), function(i, node) {
     if ($(node).text() == tag) {
-      return true;
+      result = true;
     }
   });
-  return false;
+  return result;
 }
 
 function changeVisibilityOfTagContainer() {
