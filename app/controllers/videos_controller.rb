@@ -62,6 +62,10 @@ class VideosController < ApplicationController
     @search_result = Video.search ThinkingSphinx::Query.escape("*#{@search_text}*")
   end
 
+  def upload_video
+    
+  end
+
   private
     def set_video
       @video = Video.find(params[:id])

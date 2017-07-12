@@ -5,9 +5,9 @@ namespace :sphinx do
   task setup: :environment do
   	# sudo apt-get install sphinxsearch
   	puts "Indexing existing data using index files..."
-  	rake ts:index
+  	rake 'ts:index'
   	puts "Starting searchd deamon"
-		rake ts:start
+		rake 'ts:start'
 		puts "Sphinx setup successful"
   end
 
