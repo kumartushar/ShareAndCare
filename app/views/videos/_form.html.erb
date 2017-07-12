@@ -27,39 +27,40 @@
           </div>
         </div>
       </div>
+    <div id="video_details_block" style="display:none;">
+      <div class="horizontal-line"></div>
+      <div id="mt-upload-meta">
+        <div class="field form-field margin-top-25">
+          <%= f.label :title, :class => "form-label" %>
+          <%= f.text_field :title, :class => "form-input", :placeholder => "Video Title" %>
+        </div>
+
+        <div class="field form-field">
+          <%= f.label :description, :class => "form-label" %>
+          <%= f.text_area :description, :class => "text-area height-100", :placeholder => "Video Description" %>
+        </div>
+        <!-- options_from_collection_for_select(@project.people, "id", "name") can be used -->
+        <div class="field form-field">
+          <%= f.label :category, :class => "form-label" %>
+          <%= select_tag("video[category]", options_for_select(video_category_list), {:class => 'form-input'}) %>
+        </div>
+
+        <div class="field form-field">
+          <%= f.label :tags, :class => "form-label" %>
+          <%= f.text_field :tags, :class => 'form-input width-150', :placeholder => "Enter Tag", :id => "tag-input-field" %>
+          <button id="mt-add-tag-btn" type="button" class="btn btn-primary mt-add-tag-btn">+</button>
+        </div>
+
+        <div class="tag-container">
+        </div>
+
+      </div>
     
-    <div class="horizontal-line"></div>
-    <div id="mt-upload-meta">
-      <div class="field form-field margin-top-25">
-        <%= f.label :title, :class => "form-label" %>
-        <%= f.text_field :title, :class => "form-input", :placeholder => "Video Title" %>
+      <div class="horizontal-line margin-top-25"></div>
+      <div class="form-btns">
+        <%= link_to 'Cancel', videos_path, {:class => "btn btn-default sc-btn"} %>
+        <%= f.submit "Upload", :id => "mt-upload-submit", :class => "btn btn-primary btn-submit", :disabled => true %>
       </div>
-
-      <div class="field form-field">
-        <%= f.label :description, :class => "form-label" %>
-        <%= f.text_area :description, :class => "text-area height-100", :placeholder => "Video Description" %>
-      </div>
-      <!-- options_from_collection_for_select(@project.people, "id", "name") can be used -->
-      <div class="field form-field">
-        <%= f.label :category, :class => "form-label" %>
-        <%= select_tag("video[category]", options_for_select(video_category_list), {:class => 'form-input'}) %>
-      </div>
-
-      <div class="field form-field">
-        <%= f.label :tags, :class => "form-label" %>
-        <%= f.text_field :tags, :class => 'form-input width-150', :placeholder => "Enter Tag", :id => "tag-input-field" %>
-        <button id="mt-add-tag-btn" type="button" class="btn btn-primary mt-add-tag-btn">+</button>
-      </div>
-
-      <div class="tag-container">
-      </div>
-
-    </div>
-    
-    <div class="horizontal-line margin-top-25"></div>
-    <div class="form-btns">
-      <%= link_to 'Cancel', videos_path, {:class => "btn btn-default sc-btn"} %>
-      <%= f.submit "Upload", :id => "mt-upload-submit", :class => "btn btn-primary btn-submit", :disabled => true %>
     </div>
   <% end %>
 </div>
