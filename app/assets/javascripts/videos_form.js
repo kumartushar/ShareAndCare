@@ -1,4 +1,7 @@
 $(document).ready(function(e) {
+
+  $("#video-upload-form").ajaxForm();
+
   var tagCount = 0;
 
   $(".tag-container").mCustomScrollbar({

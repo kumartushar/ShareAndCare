@@ -63,7 +63,7 @@ class VideosController < ApplicationController
   end
 
   def upload_video
-    
+    render nothing: true, status: :ok, content_type: "text/html"
   end
 
   private
