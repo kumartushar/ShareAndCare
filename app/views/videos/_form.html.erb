@@ -1,24 +1,20 @@
 <%= stylesheet_link_tag "common/jquery.mCustomScrollbar"%>
 <div class="form-content">
-  <form id="vido-upload-form" name="new-video-form" action="/upload_video" method="POST" enctype="multipart/form-data" target="video-upload-iframe">
-     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" >
-    <div class="mt-upload-widget">
-      <div class="mt-upload-prompt-box center-block">
-        <div class="mt-start-upload-button center-block">
-          <%= file_field_tag "target_video", :name => "video[target_file]", :class => "mt-upload-file-input" %>
-        </div>
-        <div class="mt-start-upload-content center-block">
-          <p class="mt-start-upload-title">Select files to upload</p>
-          <p>or drag and drop video files</p>
-        </div>
-        <div id="mt-file-title-box" class="display-none">
-          <span id="mt-file-upload-title"></span>
-        </div>
+ 
+  <div class="mt-upload-widget">
+    <div class="mt-upload-prompt-box center-block">
+      <div class="mt-start-upload-button center-block">
+        <%= file_field_tag "target_video", :name => "video[target_file]", :class => "mt-upload-file-input" %>
+      </div>
+      <div class="mt-start-upload-content center-block">
+        <p class="mt-start-upload-title">Select files to upload</p>
+        <p>or drag and drop video files</p>
+      </div>
+      <div id="mt-file-title-box" class="display-none">
+        <span id="mt-file-upload-title"></span>
       </div>
     </div>
-    <input type="submit" value="Upload" id="submitBtn"/>
-    <iframe id='video-upload-iframe' name='video_upload_iframe' src=""></iframe>
-  </form>
+  </div>
 
   <%= form_for @video, :html => { :multipart => true, :class => 'basic-form' } do |f| %>
     <% if @video.errors.any? %>
