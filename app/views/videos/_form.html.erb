@@ -1,6 +1,6 @@
 <%= stylesheet_link_tag "common/jquery.mCustomScrollbar"%>
 <div class="form-content">
-  <form id="vido-upload-form" name="new-video-form" action="/upload_video" method="POST" enctype="multipart/form-data" target="video-upload-iframe">
+  <form id="vido-upload-form" name="new-video-form" action="/upload_video" method="POST" enctype="multipart/form-data" target="video_upload_iframe">
      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" >
     <div class="mt-upload-widget">
       <div class="mt-upload-prompt-box center-block">
@@ -17,7 +17,7 @@
       </div>
     </div>
     <input type="submit" value="Upload" id="submitBtn"/>
-    <iframe id='video-upload-iframe' name='video_upload_iframe' src=""></iframe>
+    <iframe id='video_upload_iframe' name='video_upload_iframe' height="0" width="0" frameborder="0" scrolling="no" style="display:none"></iframe>
   </form>
 
   <%= form_for @video, :html => { :multipart => true, :class => 'basic-form' } do |f| %>

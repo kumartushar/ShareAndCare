@@ -76,6 +76,10 @@ $(document).ready(function(e) {
     tagCount -= 1;
     changeVisibilityOfTagContainer();
   });
+
+  $("#video_upload_iframe").load(function () {
+    alert("file is uploaded");
+  });
 });
 
 function is_already_exist(tag) {
