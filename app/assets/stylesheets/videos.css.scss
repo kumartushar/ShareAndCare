@@ -125,18 +125,21 @@
   margin-top: -4px;
 }
 .mt-upload-prompt-box {
-  width: 60%;
-  height: 210px;
-  background-color: #d5d5db;;
+  width: 80%;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  height: 302px;
+  background-color: #d5d5db;
+  cursor: pointer;
 }
 .mt-start-upload-button {
-  height: 52%;
-  width: 60%;
+  height: 64%;
+  width: 85%;
   padding: 10px 0 10px 0;
 }
 .mt-start-upload-content {
-  height: 52%;
-  width: 60%;
+  height: 35%;
+  width: 44%;
   padding: 25px 0 10px 0;
 }
 .mt-upload-file-input {
@@ -152,12 +155,12 @@
   border-radius: 20px;
   background-size: 150px 100px;
   padding: 105px 0 0 0;
+  margin-top: 13px;
 }
 .mt-start-upload-title {
   font-size: 22px;
 }
 .mt-upload-widget {
-  margin-bottom: 45px;
   padding: 15px;
   background-color: #E9E9F1;
 }
@@ -182,4 +185,25 @@
   overflow: auto;
   margin-left: 245px;
   background-color: white;
+}
+.progress {
+  margin-bottom: 0px;
+  border: solid 1px gray;
+}
+#mt-upload-progress-block {
+  float: right;
+  width: 70%;
+}
+#mt-upload-progress-text {
+  padding: 2px;
+  color: black;
+  margin-bottom: 14px;
+}
+.form-label {
+  width: 26%;
+}
+#mt-upload-meta {
+  float: right;
+  width: 70%;
+  display: inline-block;
 }

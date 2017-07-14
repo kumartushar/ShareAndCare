@@ -1,6 +1,69 @@
 $(document).ready(function(e) {
   var tagCount = 0;
 
+  $.cloudinary.config({ cloud_name: 'share-and-care', api_key: '578912338145794'});
+
+  $(function() {
+    if($.fn.cloudinary_fileupload !== undefined) {
+      $("input.cloudinary-fileupload[type=file]").cloudinary_fileupload();
+    }
+  });
+  
+  $('.cloudinary-fileupload').bind('cloudinarydone', function(e, data) {
+    // $('.preview').html(
+    // $.cloudinary.image(data.result.public_id,
+    //   { format: data.result.format, version: data.result.version,
+    //     crop: 'fill', width: 150, height: 100 })
+    // );
+    // $('.image_public_id').val(data.result.public_id);
+    $('.progress-bar').removeClass('progress-bar-info').addClass("progress-bar-success");
+    $("#mt-upload-progress-text").text("Click 'Upload' to make your video live.");
+    return true;
+  });
+
+  $('.cloudinary-fileupload').bind('fileuploadprogress', function(e, data) {
+    var loadPercent = Math.round((data.loaded * 100.0) / data.total) + '%';
+    $('.progress-bar').css('width', loadPercent).text(loadPercent);
+  });
+
+
+  $("#video_upload_tag").change(function(e){
+   $("#mt-video-details-block").removeClass("hidden");
+   $("#mt-upload-video-widget").addClass("hidden");
+  });
+
+  InitializeTagContainer();
+
+  $(document).on("click", "#mt-add-tag-btn", function(e) {
+    var tag = $("#tag-input-field").val().trim();
+    if (tag === "") {
+      alert("Blank tag cannot be added");
+    } else {
+      if (!is_already_exist(tag)) {
+        tagCount += 1;
+        $(".tag-container").append('<div class="tag-item-box"><div class="tag-item"><span class="tag-text">' + tag + '</span><input type="hidden" name="video[v_tags['+ tagCount +']]" value="' + tag + '"></div><div class="tag-item-delete-icon">x</div></div>');
+        $("#tag-input-field").val('');
+        changeVisibilityOfTagContainer();
+      } else {
+        // showAlreadyExistsMsg
+        alert("already exist");
+      }
+    }
+  });
+
+  $(document).on("click", ".tag-item-delete-icon", function(e) {
+    $(e.target).closest(".tag-item-box").remove();
+    tagCount -= 1;
+    changeVisibilityOfTagContainer();
+  });
+
+  $(document).on("click", "#mt-upload-prompt-box", function(e) {
+    $("#video_upload_tag").click();
+  });
+});
+
+
+function InitializeTagContainer() {
   $(".tag-container").mCustomScrollbar({
     set_width : false,
     set_height : false,
@@ -44,40 +107,7 @@ $(document).ready(function(e) {
     },
     theme : "light"
   });
-
-  $("#mt-upload-meta").find("*").prop("disabled", true);
-
-  $("#target_video").change(function(e){
-    $("#mt-file-upload-title").text("File Selected: " + this.value);
-    $("#mt-file-title-box").show();
-    $("#mt-upload-meta").find("*").prop("disabled", false);
-    $("#mt-upload-submit").prop("disabled", false);
-  });
-
-  $(document).on("click", "#mt-add-tag-btn", function(e) {
-    var tag = $("#tag-input-field").val().trim();
-    if (tag == "") {
-      alert("Blank tag cannot be added");
-    } else {
-      if (!is_already_exist(tag)) {
-        tagCount += 1;
-        $(".tag-container").append('<div class="tag-item-box"><div class="tag-item"><span class="tag-text">' + tag + '</span><input type="hidden" name="video[v_tags['+ tagCount +']]" value="' + tag + '"></div><div class="tag-item-delete-icon">x</div></div>');
-        $("#tag-input-field").val('');
-        changeVisibilityOfTagContainer();
-      } else {
-        // showAlreadyExistsMsg
-        alert("already exist");
-      }
-    }
-  });
-
-  $(document).on("click", ".tag-item-delete-icon", function(e) {
-    $(e.target).closest(".tag-item-box").remove();
-    tagCount -= 1;
-    changeVisibilityOfTagContainer();
-  });
-});
-
+}
 function is_already_exist(tag) {
   var result = false;
   $.each($(".tag-text"), function(i, node) {
