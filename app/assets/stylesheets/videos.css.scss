@@ -218,5 +218,22 @@
   overflow: auto;
 }
 #mt-upload-progress-block {
-  padding-top: 47px;
+  padding-top: 40px;
+  display: inline-block;
+  width: 80%;
+}
+.action_btns {
+  display: inline-block;
+  float: right;
+  width: 20%;
+  padding-top: 34px;
+}
+.action_btns a {
+  padding: 5px;
+}
+.mt-upload-submit {
+  margin-left: 20px;
+}
+.mt-video-status {
+  margin-top: 20px;
 }
