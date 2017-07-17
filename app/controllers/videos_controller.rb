@@ -36,10 +36,20 @@ class VideosController < ApplicationController
     # Cloudinary::Uploader.upload_large(params[:video][:target_file], :resource_type => :video, :public_id => "my_folder/my_sub_folder/myvideo1", :eager => [{:width => 300, :height => 300, :crop => :pad}], :eager_async => true, :eager_notification_url => "http://c45a1454.ngrok.io/videos/transform_notification")
 
     @active_page = "videos"
-    @video = Video.new(video_params)
-    # @video.video_details = response
+    if params[:id].blank?
+      @video = Video.new(video_params)
+    else
+      @video = Video.find(params[:id])
+      @video.update_attributes(video_params)
+    end
     @video.save
     respond_with(@video)
+  end
+
+  def save_draft
+    puts "params = #{params}"
+    @video = Video.new(video_params)
+    @video.save
   end
 
   def update
@@ -78,6 +88,6 @@ class VideosController < ApplicationController
     end
 
     def video_params
-      params.require(:video).permit(:title, :description, :category, :tags, :access_code)
+      params.require(:video).permit(:title, :description, :category, :tags, :access_code, :workflow_status)
     end
 end

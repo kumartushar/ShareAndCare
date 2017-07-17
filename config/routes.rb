@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get '/settings' => 'admins#settings'
   post 'admins/add_category' => "admins#add_category"
   post '/upload_video' => 'videos#upload_video'
+  post '/save_draft' => 'videos#save_draft'
 
   resources :blogs do
     collection do

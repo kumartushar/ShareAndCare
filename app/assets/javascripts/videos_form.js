@@ -15,12 +15,13 @@ $(document).ready(function(e) {
   });
   
   $('.cloudinary-fileupload').bind('cloudinarydone', function(e, data) {
+    $('.progress-bar').removeClass('progress-bar-info').addClass("progress-bar-success");
+    $('#video_public_id').val(data.result.public_id);
     $('.mt-video-thumbnail').html(
       $.cloudinary.image(data.result.public_id, { format: "jpg", crop: 'crop', width: 240, height: 107, resource_type: "video" })
     );
-    $('#video_public_id').val(data.result.public_id);
-    $('.progress-bar').removeClass('progress-bar-info').addClass("progress-bar-success");
-    $("#mt-upload-progress-text").text("Click 'Upload' to make your video live.");
+    var formData = {title: "sample video", video_details: data.result, access_code: data.result.public_id, workflow_status: "draft"}
+    sendAjaxWithCustomData("/save_draft", formData, "POST")
     return true;
   });
 

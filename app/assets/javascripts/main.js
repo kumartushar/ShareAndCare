@@ -5,6 +5,7 @@ function sendAjaxWithCustomData(route, formData, type) {
       type: type,
       data: formData,
       contentType: false,
+      processData: false,
       dataType: "script"
     });
   } catch(e) {

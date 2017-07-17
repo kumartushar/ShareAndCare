@@ -13,7 +13,7 @@
     </div>
   </div>
   
-  <div id="mt-video-details-block" class="mt-video-details-block">
+  <div id="mt-video-details-block" class="mt-video-details-block hidden">
     <div class="mt-video-details-left-part">
       <div class="mt-video-thumbnail-box">
         <div class="mt-video-thumbnail">
@@ -40,7 +40,7 @@
         </div>
         <div id="action_btns" class="action_btns">
           <%= link_to 'X', videos_path, :html => {:title => "Cancel upload"} %>
-          <button class="btn btn-primary mt-upload-submit" id="mt-upload-submit">Upload</button>
+          <button class="btn btn-primary mt-upload-submit" id="mt-upload-submit" disabled>Upload</button>
         </div>
       </div>
     
@@ -67,6 +67,8 @@
           </div>
         </div>
         <input id="video_public_id" type="hidden" name="video[access_code]" value="">
+        <input id="workflow_status" type="hidden" name="video[workflow_status]" value="published">
+        <input type="hidden" name="id" value="" id="video-id">
       <% end %>
     </div>
   </div>
