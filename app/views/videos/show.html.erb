@@ -5,7 +5,7 @@
 	  <strong><%= @video.title %></strong>
 	</p>
 
-	<%= cl_video_tag("#{@video.video_details["public_id"]}", :loop => true, :controls => true, :transformation => [
+	<%= cl_video_tag("#{@video.access_code}", :loop => true, :controls => true, :transformation => [
 	  :height=>400, :width=>700, :crop=>"scale", :quality=>70], :fallback_content => "Your browser does not support HTML5 video tags." ) %>
 </div>
 

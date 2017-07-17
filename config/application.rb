@@ -12,10 +12,6 @@ Bundler.require(*Rails.groups)
 
 module ShareAndCare
   class Application < Rails::Application
-
-    log4r_config = YAML.load_file(File.join(Rails.root, 'config', 'log4r.yml'))
-    YamlConfigurator.decode_yaml( log4r_config["log4r_config"] )
-    config.logger = Log4r::Logger[Rails.env]
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
@@ -27,5 +23,9 @@ module ShareAndCare
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+
+    log4r_config = YAML.load_file(File.join(Rails.root, 'config', 'log4r.yml'))
+    YamlConfigurator.decode_yaml( log4r_config["log4r_config"] )
+    config.logger = Log4r::Logger[Rails.env]
   end
 end

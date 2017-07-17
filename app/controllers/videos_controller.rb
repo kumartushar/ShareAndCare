@@ -25,17 +25,19 @@ class VideosController < ApplicationController
   end
 
   def create
-    params[:video][:tags] = get_tag_string(params[:video][:v_tags])
+    # This comment part specifies how to perform server side uploading
     # http://cloudinary.com/documentation/rails_video_upload#rails_video_upload_examples
     # http://cloudinary.com/documentation/upload_videos
     # http://cloudinary.com/documentation/video_management
     # http://cloudinary.com/documentation/rails_video_manipulation
-    @active_page = "videos"
-    video_public_id = "video_#{SecureRandom.urlsafe_base64}"
-    response = Cloudinary::Uploader.upload(params[:video][:target_file], :resource_type => :video, :public_id => video_public_id)
+    
+    # video_public_id = "video_#{SecureRandom.urlsafe_base64}"
+    # response = Cloudinary::Uploader.upload(params[:video][:target_file], :resource_type => :video, :public_id => video_public_id)
     # Cloudinary::Uploader.upload_large(params[:video][:target_file], :resource_type => :video, :public_id => "my_folder/my_sub_folder/myvideo1", :eager => [{:width => 300, :height => 300, :crop => :pad}], :eager_async => true, :eager_notification_url => "http://c45a1454.ngrok.io/videos/transform_notification")
+
+    @active_page = "videos"
     @video = Video.new(video_params)
-    @video.video_details = response
+    # @video.video_details = response
     @video.save
     respond_with(@video)
   end
@@ -68,7 +70,7 @@ class VideosController < ApplicationController
 
   private
     def set_video
-      @video = Video.find(params[:id])
+      @video = Video.where(access_code: params[:id]).first
     end
 
     def get_tag_string(tag_h)
@@ -76,6 +78,6 @@ class VideosController < ApplicationController
     end
 
     def video_params
-      params.require(:video).permit(:title, :description, :category, :tags)
+      params.require(:video).permit(:title, :description, :category, :tags, :access_code)
     end
 end

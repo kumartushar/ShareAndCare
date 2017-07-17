@@ -1,5 +1,6 @@
 $(document).ready(function(e) {
   //var tagCount = 0;
+  $("#mt-upload-video-form").validationEngine();
 
   $.cloudinary.config({ cloud_name: 'share-and-care', api_key: '578912338145794'});
 
@@ -15,9 +16,9 @@ $(document).ready(function(e) {
   
   $('.cloudinary-fileupload').bind('cloudinarydone', function(e, data) {
     $('.mt-video-thumbnail').html(
-      $.cloudinary.image(data.result.public_id, { format: "png", crop: 'fill', width: 150, height: 100 })
+      $.cloudinary.image(data.result.public_id, { format: "jpg", crop: 'crop', width: 240, height: 107, resource_type: "video" })
     );
-    $('.image_public_id').val(data.result.public_id);
+    $('#video_public_id').val(data.result.public_id);
     $('.progress-bar').removeClass('progress-bar-info').addClass("progress-bar-success");
     $("#mt-upload-progress-text").text("Click 'Upload' to make your video live.");
     return true;
@@ -26,8 +27,14 @@ $(document).ready(function(e) {
   $('.cloudinary-fileupload').bind('fileuploadprogress', function(e, data) {
     var loadPercent = Math.round((data.loaded * 100.0) / data.total) + '%';
     $('.progress-bar').css('width', loadPercent).text(loadPercent);
+    if (loadPercent == "100%") {
+      $("#mt-upload-progress-text").text("Processing your video...");
+    }
   });
 
+  $('.cloudinary-fileupload').bind('fileuploadfail', function(e, data) {
+    console.log("file upload fail");
+  });
 
   $("#video_upload_tag").change(function(e){
     $("#mt-video-details-block").removeClass("hidden");
@@ -35,8 +42,13 @@ $(document).ready(function(e) {
   });
 
   $(document).on("click", "#mt-upload-submit", function(e) {
-    $("#mt-upload-video-form").submit();
-  })
+    var isFormValid = $(e.target).validationEngine('validate');
+    if (!isFormValid) {
+      return false;
+    } else {
+      $("#mt-upload-video-form").submit();
+    }
+  });
 
   //InitializeTagContainer();
 
