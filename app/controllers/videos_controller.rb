@@ -48,7 +48,7 @@ class VideosController < ApplicationController
       @video.update_attributes(video_params)
     end
     @video.save
-    respond_with(@video)
+    redirect_to "/videos"
   end
 
   def update
