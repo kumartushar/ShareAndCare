@@ -13,4 +13,8 @@ $(document).ready(function(e) {
 		var videoID = $(e.target).closest(".mt-lockup-video").attr("data-context-item-id");
 		window.location.href = "/videos/" + videoID;
 	});
+
+	$(document).on("click", "#mytube-header .logo", function(e) {
+		window.location.href = "/videos";
+	});
 });

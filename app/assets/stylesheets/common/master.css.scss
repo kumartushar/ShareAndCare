@@ -76,15 +76,13 @@ body {
 .navbar {
   margin-bottom: 0;
 }
-.body-container {
-      margin-top: 51px;
-}
 .page-c-header{
   box-shadow: 6px 6px 6px grey;
   position: fixed;
   width: 100%;
   height: 58px;
   border-bottom: 1px solid;
+  z-index: 1010;
 }
 .search-field{
 	height: 40px;
@@ -259,3 +257,12 @@ body {
   background: url('/assets/loading_spinner.gif') center center no-repeat #e4e4e4;
 }
 .required { border-left: 3px solid #d83c3d !important; }
+.align-body-content {
+  margin-top: 51px;
+}
+.align-page-content {
+  height: 58px;
+}
+.page-content {
+  z-index: 1000;
+}

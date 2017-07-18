@@ -1,15 +1,30 @@
-function sendAjaxWithCustomData(route, formData, type) {
+function sendAjax(route, formData, type) {
   try{
     $.ajax({
       url: route,
       type: type,
       data: formData,
-      contentType: false,
-      processData: false,
-      dataType: "script"
+      dataType: "script",
+      contentType: false
     });
   } catch(e) {
-    $.unblockUI();
+    console.log(e.message);
+  }
+}
+
+function sendAjaxWithNoDataProcessing(route, formData, type) {
+  try{
+    $.ajax({
+      url: route,
+      type: type,
+      data: formData,
+      cache: false,
+      dataType: "script",
+      processData: false,
+      contentType: false
+    });
+  } catch(e) {
+    console.log(e.message);
   }
 }
 

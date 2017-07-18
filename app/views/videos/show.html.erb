@@ -1,13 +1,24 @@
-<p id="notice" class=""><%= notice %></p>
-
-<div class="video-play-box">
-	<p>
-	  <strong><%= @video.title %></strong>
-	</p>
-
-	<%= cl_video_tag("#{@video.access_code}", :loop => true, :controls => true, :transformation => [
-	  :height=>400, :width=>700, :crop=>"scale", :quality=>70], :fallback_content => "Your browser does not support HTML5 video tags." ) %>
+<div class="page-c-header bg-grey">
+  <div id="mytube-header" class="mytube-header">
+    <div class="logo">MyTube</div>
+    <input class="form-control mytube-search" id="mytube-search-field" type="text" placeholder="What are you looking for">
+    <span class="glyphicon glyphicon-search"></span>
+    <div class="mytube-actions">
+      <span class="glyphicon glyphicon-upload"></span>
+    </div>
+  </div>
+  <div id="mytube-search-result" class="mytube-search-result" style="display: none;">
+  </div>
 </div>
+<div class="align-page-content"></div>
 
-<%= link_to 'Edit', edit_video_path(@video) %> |
-<%= link_to 'Back', videos_path %>
+<div class="page-content">
+	<div id="player" class="mt-player-screen">
+		<div class="player-width player-height">
+			<%= cl_video_tag("#{@video.access_code}", :loop => true, :controls => true, :transformation => [
+		  :height=>460, :width=>820, :crop=>"scale", :quality=>70], :fallback_content => "Your browser does not support HTML5 video tags." ) %>
+		</div>
+	</div>
+</div>
+<%= javascript_include_tag "custom_autocomplete" %>
+<%= javascript_include_tag "video_index" %>

@@ -24,6 +24,12 @@ class VideosController < ApplicationController
     @active_page = "videos"
   end
 
+  def save_draft
+    @video = Video.new(video_params)
+    @video.video_details = JSON.parse(params[:video][:video_details])
+    @video.save
+  end
+
   def create
     # This comment part specifies how to perform server side uploading
     # http://cloudinary.com/documentation/rails_video_upload#rails_video_upload_examples
@@ -34,7 +40,6 @@ class VideosController < ApplicationController
     # video_public_id = "video_#{SecureRandom.urlsafe_base64}"
     # response = Cloudinary::Uploader.upload(params[:video][:target_file], :resource_type => :video, :public_id => video_public_id)
     # Cloudinary::Uploader.upload_large(params[:video][:target_file], :resource_type => :video, :public_id => "my_folder/my_sub_folder/myvideo1", :eager => [{:width => 300, :height => 300, :crop => :pad}], :eager_async => true, :eager_notification_url => "http://c45a1454.ngrok.io/videos/transform_notification")
-
     @active_page = "videos"
     if params[:id].blank?
       @video = Video.new(video_params)
@@ -44,12 +49,6 @@ class VideosController < ApplicationController
     end
     @video.save
     respond_with(@video)
-  end
-
-  def save_draft
-    puts "params = #{params}"
-    @video = Video.new(video_params)
-    @video.save
   end
 
   def update
@@ -64,18 +63,10 @@ class VideosController < ApplicationController
     respond_with(@video)
   end
 
-  def transform_notification
-    puts "params = #{params}"
-  end
-
   def search
     @active_page = "videos"
     @search_text = get_unescaped_search_text
     @search_result = Video.search ThinkingSphinx::Query.escape("*#{@search_text}*")
-  end
-
-  def upload_video
-    
   end
 
   private
@@ -88,6 +79,6 @@ class VideosController < ApplicationController
     end
 
     def video_params
-      params.require(:video).permit(:title, :description, :category, :tags, :access_code, :workflow_status)
+      params.require(:video).permit(:title, :description, :category, :tags, :access_code, :workflow_state)
     end
 end

@@ -12,6 +12,7 @@
 	background-color: maroon;
 	cursor: pointer;
 	color: aliceblue;
+  border-radius: 7px;
 }
 .mytube-header .glyphicon-search {
 	margin-left: -30px;
@@ -38,18 +39,13 @@
 	font-size: 20px;
 	text-align: left;
 }
-.video-play-box {
-	width: 60%;
-	margin-left: 131px;
-	margin-top: 50px;
-}
 .video-play-box p {
 	padding: 10px;
 	line-height: 35px;
 	font-size: 50px
 }
 .mt-content {
-  padding-top: 58px;
+  margin-top: 115px;
 }
 .mt-shelf-grid-item {
   display: inline-block;
@@ -58,8 +54,7 @@
   width: 196px;
 }
 .mt-feed-section-list {
-  margin-top: 40px;
-  margin-left: 30px;
+  margin-left: 10px;
 }
 .mt-feed-section {
   padding: 15px;
@@ -241,4 +236,14 @@
   width: 240px;
   height: 107px;
   padding: 2px;
+}
+.mt-player-screen {
+  margin-top: 10px;
+  margin-left: 10px;
+}
+.player-width {
+  width: 820px;
+}
+.player-height {
+  height: 460px;
 }
