@@ -19,19 +19,51 @@
 		  :height=>460, :width=>820, :crop=>"scale", :quality=>70], :fallback_content => "Your browser does not support HTML5 video tags." ) %>
 		</div>
 	</div>
-  <div id="mt-watch-header" class="mt-watch-header">
-    <div id="mt-watch-headline">
-      <div id="mt-watch-headline-title">
-        <div class="mt-watch-title-container">
-          <span class="mt-watch-title">
-            <%= @video.title %>
-          </span>
+  <div id="mt-watch-container">
+    <div id="mt-watch-content">
+      <div id="mt-watch-header" class="mt-watch-header">
+        <div id="mt-watch-headline">
+          <div id="mt-watch-headline-title">
+            <h1 class="mt-watch-title-container">
+              <span class="mt-watch-title">
+                <%= @video.title %>
+              </span>
+            </h1>
+          </div>
+        </div>
+        <div id="mt-watch-user-header"></div>
+        <div id="mt-watch-actions">
+          <div id="mt-watch-secondary-actions">
+            <div id="mt-watch-add-action"></div>
+          </div>
+          <div id="mt-watch-sentiment-actions">
+            <div id="mt-watch-views-info">
+              <div class="mt-watch-view-count">18,029,303 views</div>
+            </div>
+            <button class="sentiment-button">Like<span>1531</span></button>
+            <button class="sentiment-button">UnLike<span>60</span></button>
+          </div>
         </div>
       </div>
+      <div id="mt-watch-description-block" class="mt-watch-description-details">
+        <div id="mt-watch-description">
+          <div id="mt-watch-description-content">
+            <div id="mt-watch-description-clip">
+              <div id="mt-watch-uploader-info">
+                <strong class="watch-time-text">Published on Jul 19, 2017</strong>
+              </div>
+              <div id="mt-watch-description-text"></div>
+              <div id="mt-watch-description-extras"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="mt-watch-discussion" class="mt-watch-discussion"></div>
+    </div>
+    <div id="mt-watch-sidebar">
+      
     </div>
   </div>
-  <div id="mt-watch-description" class="mt-watch-description"></div>
-  <div id="mt-watch-discussion" class="mt-watch-discussion"></div>
 </div>
 <%= javascript_include_tag "custom_autocomplete" %>
 <%= javascript_include_tag "video_index" %>

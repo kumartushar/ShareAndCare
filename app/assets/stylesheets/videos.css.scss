@@ -240,17 +240,106 @@
 .mt-player-screen {
   margin-top: 10px;
   margin-left: 10px;
+  margin-bottom: 10px;
 }
 .player-width {
-  width: 820px;
+  width: 65%;
 }
 .player-height {
-  height: 460px;
+  height: 470px;
+}
+#mt-watch-content {
+  width: 65%;
+  float: left;
+  margin-left: 10px;
 }
 .mt-watch-header {
-  margin-left: 10px;
-  width: 820px;
-  background-color: white;
-  margin-top: 10px;
   padding: 15px;
+  min-height: 115px;
+  margin: 0 0 10px;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(0,0,0,.1);
+  box-sizing: border-box;
+}
+#player video {
+  width: 100%;
+}
+.mt-watch-title-container {
+  margin: 0;
+  line-height: normal;
+  word-wrap: break-word;
+  width: 75%;
+  font-size: 26px;
+  font-weight: normal;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font-family: sans-serif;
+  color: black;
+}
+#mt-watch-user-header {
+  position: relative;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  overflow: hidden;
+}
+#mt-watch-actions {
+  position: relative;
+  padding-top: 5px;
+  border-top: 1px solid #e2e2e2;
+}
+#mt-watch-secondary-actions {
+  position: relative;
+  left: -10px;
+  display: inline-block;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+#mt-watch-sentiment-actions {
+  float: right;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  background: transparent;
+}
+#mt-watch-views-info {
+  position: absolute;
+  right: 0;
+  bottom: 25px;
+  min-width: 160px;
+}
+.mt-watch-view-count {
+  line-height: 24px;
+  max-height: 24px;
+  text-align: right;
+  font-size: 19px;
+  color: #666;
+  white-space: nowrap;
+  margin-bottom: 2px;
+}
+.sentiment-button {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  padding: 7px;
+  height: 28px;
+  font-weight: 500;
+  font-size: 11px;
+  text-decoration: none;
+  white-space: nowrap;
+  word-wrap: normal;
+  line-height: normal;
+  vertical-align: middle;
+}
+.sentiment-button span {
+      margin-left: 6px;
+}
+.mt-watch-description-details {
+  padding: 15px;
+    margin: 0 0 10px;
+    border: 0;
+    background: #fff;
+    box-shadow: 0 1px 2px rgba(0,0,0,.1);
+    box-sizing: border-box;
 }
