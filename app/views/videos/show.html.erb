@@ -41,7 +41,7 @@
               <div class="mt-watch-view-count">18,029,303 views</div>
             </div>
             <button class="sentiment-button">Like<span>1531</span></button>
-            <button class="sentiment-button">UnLike<span>60</span></button>
+            <button class="sentiment-button">Unlike<span>60</span></button>
           </div>
         </div>
       </div>
@@ -52,13 +52,36 @@
               <div id="mt-watch-uploader-info">
                 <strong class="watch-time-text">Published on Jul 19, 2017</strong>
               </div>
-              <div id="mt-watch-description-text"></div>
-              <div id="mt-watch-description-extras"></div>
+              <div id="mt-watch-description-text"><%= @video.description %></div>
+              <div id="mt-watch-description-extras">
+                <div class="extra-section">
+                  <div class="extra-row">
+                    <h4 class="extra-title">Category</h4>
+                    <div class="extra-value">Entertainment</div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div id="mt-watch-discussion" class="mt-watch-discussion"></div>
+      <div id="mt-watch-discussion" class="mt-watch-discussion">
+        <div id="mt-watch-comment-section">
+          <div id="mt-watch-comment-header">
+            <div id="mt-watch-comment-header-line">Comments
+              <div class="comment-count">33</div>
+            </div>
+            <div id="mt-watch-comment-form">
+              <input class="comment-simplebox">
+            </div>
+            <div id="comment-form-actions">
+              <button>Cancel</button>
+              <button>comment</button>
+            </div>
+          </div>
+          <div id="mt-watch-comment-items"></div>
+        </div>
+      </div>
     </div>
     <div id="mt-watch-sidebar">
       
