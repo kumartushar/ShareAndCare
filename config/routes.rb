@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  post "/channel" => 'channels#create'
+
   get 'admins/settings'
 
   resources :videos do

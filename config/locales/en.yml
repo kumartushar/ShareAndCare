@@ -21,3 +21,6 @@
 
 en:
   hello: "Hello world"
+
+  videos:
+    create_channel: "You do not have Channnel created. Please Create Channel For Uploading Video."

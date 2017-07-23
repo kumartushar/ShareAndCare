@@ -1,16 +1,20 @@
 class VideosController < ApplicationController
   before_action :set_video, only: [:show, :edit, :update, :destroy]
+  before_action :check_channel_presence,  only: [:new]
 
   respond_to :html
 
   def index
     @active_page = "videos"
     @videos = Video.all
+    @is_create_channel = current_user.channel.blank?
     respond_with(@videos)
   end
 
   def show
     @active_page = "videos"
+    @video.no_of_views += 1
+    @video.save
     respond_with(@video)
   end
 
@@ -27,6 +31,7 @@ class VideosController < ApplicationController
   def save_draft
     @video = Video.new(video_params)
     @video.video_details = JSON.parse(params[:video][:video_details])
+    @video.channel_id = current_user.channel.id
     @video.save
   end
 
@@ -80,5 +85,12 @@ class VideosController < ApplicationController
 
     def video_params
       params.require(:video).permit(:title, :description, :category, :tags, :access_code, :workflow_state)
+    end
+
+    def check_channel_presence
+      if current_user.channel.blank?
+        flash[:notice] = t('videos.create_channel')
+        redirect_to "/videos"
+      end
     end
 end

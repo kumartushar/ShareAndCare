@@ -2,8 +2,8 @@ class User < ActiveRecord::Base
 	has_one :channel #channel created by user. This creates an association of name 'channel', refering to class 'Channel'(db table - channels), and Foreign key as user_id from channels table. We can specify class and foreign key explicitely while declaring association
 	has_many :subsciptions
 	has_many :subscribed_channels, through: :subsciptions, source: :channel
-	has_many :owned_videos, through: :channel, source: :video
-	has_many :subscribed_videos, through: :subscribed_channels, source: :video
+	has_many :owned_videos, through: :channel, source: :videos
+	has_many :subscribed_videos, through: :subscribed_channels, source: :videos
 	# Include default devise modules. Others available are:
 	# :confirmable, :lockable, :timeoutable and :omniauthable
 	devise :database_authenticatable, :registerable,

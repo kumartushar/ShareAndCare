@@ -6,7 +6,12 @@ $(document).ready(function(e) {
 	});
 
 	$(document).on("click", ".mytube-actions .glyphicon-upload", function(e){
-		window.location.href = "/videos/new";
+		if (isCreateChannel) {
+			var channelForm = '<input type="text" name="channel[name]" placeholder="Channel Name"id="channel-name-input-field"><button id="add-channel-button" type="button" class="btn btn-success">Create</button>';
+			showSmallModal("Create Channel", channelForm, true);
+		} else {
+			window.location.href = "/videos/new";
+		}
 	});
 
 	$(document).on("click", ".mt-lockup-video", function(e) {
@@ -17,4 +22,11 @@ $(document).ready(function(e) {
 	$(document).on("click", "#mytube-header .logo", function(e) {
 		window.location.href = "/videos";
 	});
+
+	$(document).on("click", "#add-channel-button", function(e) {
+		var channelName = $("#channel-name-input-field").val();
+		var fd = new FormData();
+		fd.append("name", channelName);
+		sendAjaxWithNoDataProcessing("/channel", fd, "POST");
+	})
 });

@@ -13,33 +13,13 @@
 <div class="align-page-content"></div>
 
 <div class="page-content">
+  <%= render 'layouts/message_div' %>
   <div class="mt-feed-section-list">
-    <div class="mt-feed-section">
-      <div class="mt-section-title-table">
-        <div class="mt-section-title-row">
-          <span class="mt-section-title-text">Recommended</span>
-        </div>
-      </div>
-
-      <div class="mt-multirow-shelf">
-        <ul class="mt-shelf-content">
-          <% @videos.each do |video| %>
-            <li class="mt-shelf-grid-item">
-              <div class="mt-lockup-video" data-context-item-id="<%= video.access_code %>">
-                <div class="mt-lockup-thumbnail">
-                  <%= cl_image_tag("#{video.access_code}.jpg", :start_offset=>"70", :width=>196, :height=>100, :radius=>20, :border=>"5px_solid_black", :crop=>"scale", :resource_type=>"video") %>
-                </div>
-                <div class="mt-lockup-content">
-                  <div class="mt-lockup-title"><%= video.title %></div>
-                  <div class="mt-lockup-meta"></div>
-                </div>
-              </div>
-            </li>
-          <% end %>          
-        </ul>
-      </div>
-    </div>
+    <%= render 'video_channel_section' %>
   </div>
 </div>
+<script type="text/javascript">
+  var isCreateChannel = <%= @is_create_channel %>;
+</script>
 <%= javascript_include_tag "custom_autocomplete" %>
 <%= javascript_include_tag "video_index" %>

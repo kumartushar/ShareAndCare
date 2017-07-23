@@ -1,0 +1,9 @@
+<% if flash[:success]%>
+	<%= message_div(flash[:success], "success")%>
+<% end %>
+<% if flash[:error]%>
+	<%= message_div(flash[:error], "error")%>
+<% end %>
+<% if flash[:notice]%>
+	<%= message_div(flash[:notice], "notice")%>
+<% end %>

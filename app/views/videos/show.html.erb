@@ -38,10 +38,10 @@
           </div>
           <div id="mt-watch-sentiment-actions">
             <div id="mt-watch-views-info">
-              <div class="mt-watch-view-count">18,029,303 views</div>
+              <div class="mt-watch-view-count"><%= @video.no_of_views %> views</div>
             </div>
-            <button class="sentiment-button">Like<span>1531</span></button>
-            <button class="sentiment-button">Unlike<span>60</span></button>
+            <button class="sentiment-button">Like<span><%= @video.no_of_likes %></span></button>
+            <button class="sentiment-button">Dislike<span><%= @video.no_of_dislikes %></span></button>
           </div>
         </div>
       </div>

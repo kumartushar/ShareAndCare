@@ -37,28 +37,23 @@ function isValidKeyPressedForSearch(keyCode) {
   return isValid;
 }
 
-function showSmallModal(title, body) {
-  showModal(title, body, "small");
+function showSmallModal(title, body, isHtmlBody = false) {
+  showModal(title, body, "small", isHtmlBody);
 }
 
-function showLargeModal(title, body) {
-  showModal(title, body, "large");
+function showLargeModal(title, body, isHtmlBody = false) {
+  showModal(title, body, "large", isHtmlBody);
 }
-function showModal(title, body, sizeClass) {
+function showModal(title, body, sizeClass, isHtmlBody) {
   $("#my-modal-header-text").text(title);
-  $("#my-modal-body-text").text(body);
+  if (isHtmlBody) {
+    var htmlBody = $.parseHTML(body);
+    $("#modal-body").html(htmlBody);  
+  } else {
+    var textBody = $.parseHTML('<p id="my-modal-body-text">' + body + '</p>');
+    $("#modal-body").html(textBody);
+  }
+  $(".footer-btn").addClass("hidden");
   sizeClass == "small" ? $("#my-modal-dialog").removeClass("modal-lg").addClass("modal-sm") : $("#my-modal-dialog").removeClass("modal-sm").addClass("modal-lg");
   $("#showModalPopupBtn").trigger('click');
 }
-// function isValidKeyPressedForSearch(keycode) {
-//   var result = (/[a-zA-Z0-9-_ ]/.test(inp));
-//   return result;
-// }
-
-// function isValidByExpression(keycode) {
-//   return (/[a-zA-Z0-9-_ ]/.test(inp));
-// }
-
-// function isValidateByKeycode(keycode) {
-//   return [8, 13, 46].indexOf(keycode) > -1;
-// }
