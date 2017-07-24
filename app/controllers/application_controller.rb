@@ -17,11 +17,19 @@ class ApplicationController < ActionController::Base
     e.backtrace[0..13].each { |line| Rails.logger.error line }
   end
 
-  def flash_message(flash_message)
+  def flash_error(flash_message)
     flash[:error] =  t(flash_message)
   end
 
+  def flash_notice(flash_message)
+    flash[:notice] =  t(flash_message)
+  end
+
+  def flash_success(flash_message)
+    flash[:success] =  t(flash_message)
+  end
+
   def get_unescaped_search_text
-      URI.unescape(params[:search_text].strip)
-    end
+    URI.unescape(params[:search_text].strip)
+  end
 end

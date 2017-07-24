@@ -24,3 +24,16 @@ en:
 
   videos:
     create_channel: "You do not have Channnel created. Please Create Channel For Uploading Video."
+    video_not_found: "Video you are looking for is not present or removed from system."
+    index_page_load_error: "Error occured while loading videos."
+    show_page_load_error: "Error occured while loading video."
+    new_page_load_error: "Error occured while opening upload video form."
+    create_page_error: "Error occured while publishing video."
+
+  blogs:
+    index_page_load_error: "Error occured while loading all blogs."
+    show_page_load_error: "Error occured while displaying blog content."
+    new_page_load_error: "Error occured while opening blog create form."
+    edit_page_load_error: "Error occured while opening blog edit form."
+    create_page_error: "Error occured while creating blog."
+    update_page_error: "Error occured while updating blog."

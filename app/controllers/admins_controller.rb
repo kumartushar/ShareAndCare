@@ -10,7 +10,6 @@ class AdminsController < ApplicationController
     rescue Exception => e
       @success = false
       log_error(e, "Error occured in add_category action of AdminsController")
-      flash_message("Error occured")
     end
   end
 
