@@ -41,13 +41,13 @@
             <div id="mt-watch-views-info">
               <div class="mt-watch-view-count"><%= @video.no_of_views %> views</div>
             </div>
-            <button class="sentiment-button mt-sentiment-action" title="I like this" mt-post-action="mt-l" mt-post-data="<%= @video.access_code %>">
+            <button class="sentiment-button mt-sentiment-action" title="I like this" mt-post-action="like" mt-post-data="<%= @video.access_code %>">
               <span class="glyphicon glyphicon-thumbs-up"></span>
-              <span><%= @video.no_of_likes %></span>
+              <span id="mt-video-like-count"><%= @video.no_of_likes %></span>
             </button>
-            <button class="sentiment-button mt-sentiment-action" title="I dislike this" mt-post-action="mt-dl" mt-post-data="<%= @video.access_code %>">
+            <button class="sentiment-button mt-sentiment-action" title="I dislike this" mt-post-action="dislike" mt-post-data="<%= @video.access_code %>">
               <span class="glyphicon glyphicon-thumbs-down"></span>
-              <span><%= @video.no_of_dislikes %></span>
+              <span id="mt-video-dislike-count"><%= @video.no_of_dislikes %></span>
             </button>
           </div>
         </div>
@@ -96,7 +96,7 @@
   </div>
 </div>
 <script type="text/javascript">
-  var currentSentimentAction = "like";
+  var preSentimentAction = "<%= @like_dislike_status %>";
 </script>
 <%= javascript_include_tag "custom_autocomplete" %>
 <%= javascript_include_tag "video_index" %>

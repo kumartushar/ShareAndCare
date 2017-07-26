@@ -39,8 +39,9 @@ class VideosController < ApplicationController
   def show
     begin
       @active_page = "videos"
-      @video.no_of_views += 1
-      @video.save
+      @video.increament_no_of_views
+      uvh_record = UserVideoHistory.update_view_history(current_user.id, @video.id)
+      @like_dislike_status = uvh_record.like_dislike_status
       respond_with(@video)
     rescue Exception => e
       log_error(e, "Error occured in Show action of VideosController")
@@ -179,8 +180,8 @@ class VideosController < ApplicationController
   ##
   def like_dislike
     begin
-      params[:action] == "like" ? @video.no_of_likes += 1 : @video.no_of_dislikes += 1
-      @video.save
+      @video.update_no_of_likes_dislikes(params[:mt_action])
+      UserVideoHistory.update_like_dislike_history(current_user.id, @video.id, params[:like_dislike_status])
       @success = true
     rescue Exception => e
       @success = false

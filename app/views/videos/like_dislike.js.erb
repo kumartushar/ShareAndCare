@@ -1,0 +1,4 @@
+<% if @success %>
+	update_like_dislike_count("<%= @video.no_of_likes %>", "<%= @video.no_of_dislikes %>");
+	update_like_dislike_icons("<%= params[:like_dislike_status] %>");
+<% end %>
