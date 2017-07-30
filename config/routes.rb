@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   post "/channel" => 'channels#create'
 
   get 'admins/settings'
@@ -11,6 +10,7 @@ Rails.application.routes.draw do
     member do
       post 'like_dislike'
     end
+    resources :comments
   end
 
   get '/settings' => 'admins#settings'
@@ -21,6 +21,7 @@ Rails.application.routes.draw do
     collection do
       get 'search'
     end
+    resources :comments
   end
 
   devise_for :users
@@ -34,6 +35,10 @@ Rails.application.routes.draw do
   get '/home' => "dashboards#home"
   devise_scope :user do
     get '/sign_out' => "devise/sessions#destroy"
+  end
+
+  resources :comments do
+    resources :comments
   end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

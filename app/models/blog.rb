@@ -1,4 +1,5 @@
 class Blog < ActiveRecord::Base
+	has_many :comments, as: :commentable
 	mount_uploader :avatar, ImageUploader
 	validates :title, presence: true
 	validate :avatar_size

@@ -389,3 +389,21 @@
 .sentiment-active {
   color: #0080FF;
 }
+.mt-watch-comment-input {
+  width: 80%;
+  height: 60px;
+}
+#mt-watch-comment-items {
+  margin-top: 20px;
+  border-top: 1px solid gainsboro;
+  padding: 10px 0px;
+}
+.sc-comment-thread {
+  margin: 0 10px 30px 0;
+  line-height: 1.3em;
+}
+.sc-comment-details {
+  overflow: hidden;
+  position: relative;
+  padding-right: 20px;
+}

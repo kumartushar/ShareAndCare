@@ -76,17 +76,20 @@
         <div id="mt-watch-comment-section">
           <div id="mt-watch-comment-header">
             <div id="mt-watch-comment-header-line">Comments
-              <div class="comment-count">33</div>
+              <div class="comment-count"><%= @video.comments.count %></div>
             </div>
             <div id="mt-watch-comment-form">
-              <input class="comment-simplebox">
-            </div>
-            <div id="comment-form-actions">
-              <button>Cancel</button>
-              <button>comment</button>
+              <%= form_for [@video, Comment.new], remote: true do |f| %>
+                <%= f.text_field :body, placeholder: "Add a Comment", :class => "mt-watch-comment-input" %>
+                <%= f.submit "Comment", :class => "btn btn-info" %>
+              <% end %>
             </div>
           </div>
-          <div id="mt-watch-comment-items"></div>
+          <div id="mt-watch-comment-items">
+            <% @video.comments.each do |comment| %>
+              <%= render partial: "comments/comment_form", locals: {comment: comment} %>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>

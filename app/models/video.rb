@@ -2,6 +2,7 @@ class Video < ActiveRecord::Base
 	belongs_to :channel
 	has_many :user_video_histories
 	has_many :users, through: :user_video_histories
+	has_many :comments, as: :commentable
 	serialize :video_details, Hash
 
 	def self.get_by_access_code(access_code)

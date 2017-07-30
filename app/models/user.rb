@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
 	has_many :subscribed_videos, through: :subscribed_channels, source: :videos
 	has_many :user_video_histories
 	has_many :watched_videos, through: :user_video_histories, source: :video
+	has_many :comments
 	# Include default devise modules. Others available are:
 	# :confirmable, :lockable, :timeoutable and :omniauthable
 	devise :database_authenticatable, :registerable,
