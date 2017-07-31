@@ -1,0 +1,10 @@
+<div class="sc-comment-thread">
+	<%= render partial: "comments/comment_block", locals: {comment: comment} %>
+	<% if comment.replies %>
+		<div class="sc-comment-replies-block">
+			<% comment.replies.each do |comment| %>
+				<%= render partial: "comments/comment_block", locals: {comment: comment} %>
+			<% end %>
+		</div>
+	<% end %>
+</div>

@@ -85,9 +85,9 @@
               <% end %>
             </div>
           </div>
-          <div id="mt-watch-comment-items">
+          <div class="sc-comment-list">
             <% @video.comments.each do |comment| %>
-              <%= render partial: "comments/comment_form", locals: {comment: comment} %>
+              <%= render partial: "comments/comment_thread", locals: {comment: comment} %>
             <% end %>
           </div>
         </div>

@@ -393,7 +393,7 @@
   width: 80%;
   height: 60px;
 }
-#mt-watch-comment-items {
+.sc-comment-list {
   margin-top: 20px;
   border-top: 1px solid gainsboro;
   padding: 10px 0px;
@@ -402,8 +402,41 @@
   margin: 0 10px 30px 0;
   line-height: 1.3em;
 }
-.sc-comment-details {
+.sc-comment-block {
   overflow: hidden;
   position: relative;
   padding-right: 20px;
+}
+.sc-comment-author-thumbnail {
+  float: left;
+  margin-right: 10px;
+  position: relative;
+  width: 48px;
+  overflow: hidden;
+  background: #f1f1f1;
+  font-size: 0;
+  vertical-align: middle;
+  display: inline-block;
+}
+.sc-comment-header {
+  overflow: hidden;
+}
+.sc-comment-header a {
+  color: #128ee9;
+  font-weight: 500;
+  text-decoration: none;
+  word-break: break-all;
+}
+.sc-comment-text {
+  max-height: 65px;
+  overflow: hidden;
+  word-wrap: break-word;
+  margin-bottom: 8px;
+}
+.sc-comment-replies-block {
+  margin-left: 58px;
+}
+.sc-comment-content {
+  overflow: hidden;
+  min-height: 48px;
 }

@@ -18,4 +18,8 @@ class User < ActiveRecord::Base
 	validates :first_name, :last_name, length: {maximum: 20}
 	validates :password, :password_confirmation, length: {in: 6..20}
 	validates :gender, numericality: {only_integer: true}
+
+	def full_name
+		"#{self.first_name} #{self.last_name}"
+	end
 end
